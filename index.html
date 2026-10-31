@@ -73,6 +73,7 @@
 .guardian-category-hint{font-size:11px;color:var(--muted);margin:7px 0 0}
 .guardian-picker-field{display:grid;gap:7px}
 .guardian-picker-field select{max-width:100%}
+/* v29: Google同期パネルをアプリ最下部へ移動 */
 /* v28: owned/wakuwaku thumbnail, EX categorized select, dashboard account switch */
 .collection-character-cell{display:flex;align-items:center;gap:9px;min-width:140px}.collection-character-cell .character-icon-frame{flex:0 0 44px;width:44px;height:44px}.collection-character-cell .character-icon-frame img{width:100%;height:100%;object-fit:cover}.collection-character-label{min-width:0;overflow-wrap:anywhere}
 .dashboard-account-switch{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;border:1px solid #396b96;border-radius:14px;background:linear-gradient(120deg,#163953,#11253e);padding:13px 16px;margin-bottom:15px}.dashboard-account-switch .account-switch-caption{font-size:11px;color:#a7d6ee}.dashboard-account-switch select{width:min(340px,100%);min-width:190px;border-color:#4e96be;background:#0b213a;font-weight:750}.dashboard-account-switch .current-account-name{font-size:16px;font-weight:800;color:#f0f9ff}.dashboard-account-switch .account-switch-field{display:grid;gap:5px;flex:1;max-width:380px}.dashboard-account-switch .account-switch-summary{font-size:12px;color:#b9d5ea}
@@ -81,7 +82,8 @@
 </style></head>
 <body><div class="app">
 <header class="top"><div class="brand"><div class="logo">M</div><div><h1>MONST MASTER</h1><small>PLAYER DATA MANAGEMENT</small></div></div><div class="top-actions"><button id="exportBtn">↓ バックアップ</button><button id="importBtn">↑ 復元</button><input id="importFile" type="file" accept="application/json" class="hide"></div></header>
-<section class="panel" id="cloudPanel" style="margin-bottom:16px;border-color:#3974a8">
+<div class="layout"><aside class="sidebar"><div class="account-label">管理中のアカウントを切り替え</div><select id="accountSelect" aria-label="管理するアカウント"></select><div class="toolbar" style="margin:9px 0 0"><button class="primary" id="addAccount">＋ アカウント追加</button><button id="renameAccount">名前変更</button></div><nav class="nav" id="nav"><button class="active" data-page="dashboard"><span>⌂</span>ダッシュボード</button><button data-page="characters"><span>♙</span>所持キャラ</button><button data-page="gachaDex"><span>▦</span>キャラ図鑑</button><button data-page="luck"><span>✦</span>わくわく厳選</button><button data-page="quests"><span>⚔</span>クエスト編成</button><button data-page="ex"><span>◇</span>EX周回カウンター</button><button data-page="calculators"><span>∑</span>計算ツール</button><button data-page="settings"><span>⚙</span>データ管理</button></nav></aside>
+<main class="content" id="view"></main></div><section class="panel" id="cloudPanel" style="margin:20px 0 16px;border-color:#3974a8">
 <h3>☁ Googleログイン・クラウド同期</h3>
 <p class="muted" id="cloudStatus">接続を準備しています…</p>
 <div class="toolbar" style="margin-bottom:0">
@@ -93,8 +95,7 @@
 </div>
 <p class="muted" style="font-size:11px;margin:10px 0 0">初回移行は手動操作です。先に「↓バックアップ」でJSONを保存してください。自動上書き・自動同期は行いません。</p>
 </section>
-<div class="layout"><aside class="sidebar"><div class="account-label">管理中のアカウントを切り替え</div><select id="accountSelect" aria-label="管理するアカウント"></select><div class="toolbar" style="margin:9px 0 0"><button class="primary" id="addAccount">＋ アカウント追加</button><button id="renameAccount">名前変更</button></div><nav class="nav" id="nav"><button class="active" data-page="dashboard"><span>⌂</span>ダッシュボード</button><button data-page="characters"><span>♙</span>所持キャラ</button><button data-page="gachaDex"><span>▦</span>キャラ図鑑</button><button data-page="luck"><span>✦</span>わくわく厳選</button><button data-page="quests"><span>⚔</span>クエスト編成</button><button data-page="ex"><span>◇</span>EX周回カウンター</button><button data-page="calculators"><span>∑</span>計算ツール</button><button data-page="settings"><span>⚙</span>データ管理</button></nav></aside>
-<main class="content" id="view"></main></div><div class="footer">MONST MASTER · データはこのブラウザ内にも保存されます。クラウド同期前にJSONバックアップを作成してください。</div></div><div id="modalRoot"></div><div id="toastRoot"></div>
+<div class="footer">MONST MASTER · データはこのブラウザ内にも保存されます。クラウド同期前にJSONバックアップを作成してください。</div></div><div id="modalRoot"></div><div id="toastRoot"></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (()=>{'use strict';
