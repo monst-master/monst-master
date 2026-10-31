@@ -52,9 +52,27 @@
 .quest-seed-list .seed-display{max-width:none}
 .guardian-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#122d46;border:1px solid #31577e;color:#d5edff;font-size:12px;font-weight:600;flex-wrap:wrap}
 .guardian-badge .mini{font-size:10px;color:#88bddd;font-weight:500}
-.guardian-icon{width:28px;height:28px;border-radius:50%;display:inline-block;flex:0 0 28px;background-size:cover;background-position:center;box-shadow:0 0 0 1px rgba(255,255,255,.15) inset}
+.guardian-icon-frame{display:inline-flex;align-items:center;justify-content:center;flex:0 0 34px;width:34px;height:34px;border-radius:8px;background:#0a1323;overflow:hidden;border:1px solid #56718b}
+.guardian-icon{width:100%;height:100%;object-fit:cover;display:block}
+.guardian-icon-empty{width:34px;min-width:34px;min-height:34px;border:1px dashed #546580;border-radius:7px;color:#a3b8cb;font-size:9px;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.guardian-icon-empty[hidden]{display:none!important}
+.guardian-picker{border:1px solid #345472;background:#0c1626;border-radius:11px;margin-top:8px;padding:9px}
+.guardian-picker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(116px,1fr));max-height:275px;overflow:auto;gap:6px;margin-top:8px}
+.guardian-picker-item{display:flex;align-items:center;gap:6px;padding:6px;background:#142940;border:1px solid #284864;border-radius:8px;text-align:left;min-width:0;color:#e9f3ff;font-size:11px}
+.guardian-picker-item .guardian-icon-frame{width:36px;height:36px;flex-basis:36px}
+.guardian-picker-item span:last-child{overflow-wrap:anywhere}
+.guardian-picker-item:hover,.guardian-picker-item:focus-visible{background:#214363;border-color:#6fa5ce}
+.guardian-picker-item.selected{border-color:#4fcea6;background:#123c35}
+@media(max-width:520px){.guardian-picker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .guardian-select-preview{margin-top:8px}
 @media(max-width:560px){.seed-display{max-width:160px}}
+
+/* v27: 守護獣はカテゴリー → プルダウン → アイコン選択のみ（手入力なし） */
+.guardian-picker-grid{max-height:290px}
+.guardian-picker-item[aria-pressed="true"]{border-color:#55d2a8;background:#154239;box-shadow:0 0 0 1px #55d2a866 inset}
+.guardian-category-hint{font-size:11px;color:var(--muted);margin:7px 0 0}
+.guardian-picker-field{display:grid;gap:7px}
+.guardian-picker-field select{max-width:100%}
 </style></head>
 <body><div class="app">
 <header class="top"><div class="brand"><div class="logo">M</div><div><h1>MONST MASTER</h1><small>PLAYER DATA MANAGEMENT</small></div></div><div class="top-actions"><button id="exportBtn">↓ バックアップ</button><button id="importBtn">↑ 復元</button><input id="importFile" type="file" accept="application/json" class="hide"></div></header>
@@ -490,15 +508,42 @@ const EMBLEM_GROUPS={
  'ギミック・状態':['収監回避','伝染抵抗','窮地の活路','ハートパネルブースト'],
  'その他':['ゲージ必中']
 };
-const GUARDIAN_BEASTS=['ワイバーン','ヴィヴィアン','キングクロッチ','ブラウニー','スレイプニル','花果山猿','サムロスワ','クシティ','ケリュネイア','プリシーパー','シーサーズ','ラクーニ','グリフォン','フォンフォン','ウィルオウィスプ','ガマゾウ','烈火鮫','ザントマン','アンデッドバニー','ハンサ','五色神牛','ムシュフシュ','ぽるたん','マロファ','バンシー','クリスティーヌ','ムシカ','ラパパタ','オルトロス','叫喚','鉢かづき姫','レプリカ','ゴメちゃん','パック','林藤陽太郎','ストーンフリー','チョッパー','キュゥべえ','大賢者','ユイ','スタープラチナ','ボンド','ゴリアテ','ゴールドエクスペリエンス','智慧乃王','パトラッシュ'];
+/* v26: guardian beast portrait images (external GameWith icon refs) */
+const GUARDIAN_BEASTS=["ワイバーン","ヴィヴィアン","キングクロッチ","レプリカ","ブラウニー","スレイプニル","ゴメちゃん","花果山猿","パック","サムロスワ","クシティ","雷神丸","ケリュネイア","プリシーパー","ドンドンシーサーズ","ストーン・フリー","チョッパー","ラクーニ","キュゥべえ","グリフォン","フォンフォン","ウィルオウィスプ","大賢者","ガマゾウ","烈火鮫","ザントマン","ユイ","スタープラチナ","アンデッド・バニー","ハンサ","ボンド","五色神牛","ムシュフシュ","ぽるたん","マロファ","バンシー","ゴリアテ","クリスティーヌ","ゴールド・エクスペリエンス","ムシカ","智慧之王","ラパパタ","オルトロス","ハロ","ケツァルコアトル","ナビ","ハムシル","鉢かづき姫","白沢","ジョルキオーズ","たい吉","ヒョーたん","パトラッシュ","叫喚"];
+const GUARDIAN_ALIASES={"林藤陽太郎":"雷神丸","林藤陽太郎＆雷神丸":"雷神丸","シーサーズ":"ドンドンシーサーズ","ドンドンシーザーズ":"ドンドンシーサーズ","ストーンフリー":"ストーン・フリー","アンデッドバニー":"アンデッド・バニー","ゴールドエクスペリエンス":"ゴールド・エクスペリエンス","智慧乃王":"智慧之王","キュウベイ":"キュゥべえ","ボンド・フォージャー":"ボンド","佐倉双葉":"ナビ"};
+const GUARDIAN_CATEGORIES={"常設":["ワイバーン","ヴィヴィアン","キングクロッチ","ブラウニー","スレイプニル","花果山猿","サムロスワ","クシティ","ケリュネイア","プリシーパー","ドンドンシーサーズ","ラクーニ","グリフォン","フォンフォン","ウィルオウィスプ","ガマゾウ","烈火鮫","ザントマン","アンデッド・バニー","ハンサ","五色神牛","ムシュフシュ","ぽるたん","マロファ","バンシー","クリスティーヌ","ムシカ","ラパパタ","オルトロス","ケツァルコアトル","ハムシル","鉢かづき姫","白沢","ジョルキオーズ","たい吉","ヒョーたん","叫喚"],"期間限定・コラボ":["レプリカ","ゴメちゃん","パック","雷神丸","ストーン・フリー","チョッパー","キュゥべえ","大賢者","ユイ","スタープラチナ","ボンド","ゴリアテ","ゴールド・エクスペリエンス","智慧之王","ハロ","ナビ","パトラッシュ"]};
+const GUARDIAN_ICON_BASE="https://img.gamewith.jp/article_tools/monst/gacha/";
+const GUARDIAN_IMAGE_IDS=Object.fromEntries(GUARDIAN_BEASTS.map((name,index)=>[name,index+1]));
+
 
 function accountById(id){return state.accounts.find(x=>x.id===id)||acct()}
 function characterByName(a,name){return a.characters.find(c=>c.name===name)}
 function seedSummary(c){if(!c)return 'わくわくの実：未登録';let seeds=(c.seeds||[]).filter(Boolean);return seeds.length?'わくわく：'+seeds.join(' ／ '):'わくわくの実：未登録'}
-function guardianOptions(extra=''){const set=new Set([...GUARDIAN_BEASTS,...state.accounts.flatMap(a=>(a.quests||[]).map(q=>q.guardianBeast).filter(Boolean)),extra].filter(Boolean));return [...set].sort((a,b)=>a.localeCompare(b,'ja')).map(x=>`<option value="${esc(x)}">`).join('')}
-function guardianIconUri(name){if(!name)return ''; const palette=['#3fa7ff','#ff8f66','#6ed38a','#c78bff','#ffd45e','#4dd0c8','#ff72a8','#7aa8ff']; let h=0; for(const ch of [...name]) h=(h*33+ch.codePointAt(0))>>>0; const c1=palette[h%palette.length], c2=palette[(h>>3)%palette.length]; const label=[...name].slice(0,2).join(''); const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="${c1}"/><stop offset="100%" stop-color="${c2}"/></linearGradient></defs><circle cx="32" cy="32" r="30" fill="url(#g)"/><circle cx="32" cy="32" r="26" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.45)"/><text x="32" y="38" font-size="20" text-anchor="middle" font-family="sans-serif" font-weight="700" fill="#fff">${label}</text></svg>`; return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg)}
-function guardianIconHtml(name){return name?`<span class="guardian-icon" style="background-image:url('${guardianIconUri(name)}')"></span>`:''}
-function guardianBadge(name){return name?`<span class="guardian-badge">${guardianIconHtml(name)}<span class="mini">守護獣</span>${esc(name)}</span>`:'<span class="muted">未設定</span>'}
+function guardianCanonical(name){const key=String(name||'').trim();return GUARDIAN_ALIASES[key]||key;}
+function guardianCategoryFor(name){const canonical=guardianCanonical(name);if(!canonical)return '';return Object.entries(GUARDIAN_CATEGORIES).find(([,items])=>items.includes(canonical))?.[0]||'legacy';}
+function guardianCategoryOptions(selected){let options='<option value="">カテゴリーを選択</option>'+Object.keys(GUARDIAN_CATEGORIES).map(c=>`<option value="${esc(c)}" ${selected===c?'selected':''}>${esc(c)}（${GUARDIAN_CATEGORIES[c].length}体）</option>`).join('');if(selected==='legacy')options+='<option value="legacy" selected>以前の登録（未分類）</option>';return options;}
+function guardianChoiceOptions(category,selected){const entries=category==='legacy'?[selected].filter(Boolean):GUARDIAN_CATEGORIES[category]||[];return '<option value="">守護獣を選択</option>'+entries.map(name=>`<option value="${esc(name)}" ${selected===name?'selected':''}>${esc(name)}</option>`).join('');}
+function guardianIconUri(name){
+ const key=String(name||'').trim();
+ const canonical=GUARDIAN_ALIASES[key]||key;
+ const id=GUARDIAN_IMAGE_IDS[canonical];
+ return id?`${GUARDIAN_ICON_BASE}shugo_${id}.jpg`:'';
+}
+function guardianIconHtml(name){
+ const url=guardianIconUri(name);
+ if(!name)return '';
+ // Unknown custom entries retain their name; never substitute an unrelated image.
+ if(!url)return '<span class="guardian-icon-empty" title="該当アイコンなし">画像なし</span>';
+ return `<span class="guardian-icon-frame"><img class="guardian-icon" src="${url}" alt="${esc(name)}の守護獣アイコン" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="guardian-icon-empty" hidden>画像なし</span></span>`;
+}
+function guardianBadge(name){
+ return name?`<span class="guardian-badge">${guardianIconHtml(name)}<span class="mini">守護獣</span><span>${esc(name)}</span></span>`:'<span class="muted">未設定</span>';
+}
+function guardianPickerItems(category,selected=''){
+ const entries=category==='legacy'?[selected].filter(Boolean):GUARDIAN_CATEGORIES[category]||[];
+ if(!category)return '<div class="empty" style="grid-column:1/-1">先にカテゴリーを選んでください。</div>';
+ return entries.length?entries.map(name=>`<button type="button" class="guardian-picker-item" data-guardian-choice="${esc(name)}" aria-pressed="${selected===name}" title="${esc(name)}を選択">${guardianIconHtml(name)}<span>${esc(name)}</span></button>`).join(''):'<div class="empty" style="grid-column:1/-1">このカテゴリーの守護獣はありません。</div>';
+}
 function quests(v,a){
  v.innerHTML=head('クエスト編成',`全アカウントの登録キャラを使って編成できます。編成データは現在のアカウントに保存されます。`,`<button class="primary" id="newQuest">＋ 編成を追加</button>`)+`<section class="panel"><div class="toolbar"><select id="questCategoryFilter"><option value="">全カテゴリー</option>${QUEST_CATEGORIES.map(x=>`<option>${x}</option>`).join('')}</select><input id="questSearch" placeholder="クエスト名で検索"></div><div id="questList"></div></section>`;
  function list(){
@@ -513,11 +558,16 @@ function quests(v,a){
 function questModal(a,q){
  q=q||{};const allNames=[...new Set(state.accounts.flatMap(x=>x.characters.map(c=>c.name)))];let opts=allNames.map(n=>`<option value="${esc(n)}">`).join('');
  const accountOptions=state.accounts.map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join('');
- const guardianList=guardianOptions(q.guardianBeast);
+ const initialGuardian=q.guardianBeast?guardianCanonical(q.guardianBeast):'';
+ const initialGuardianCategory=guardianCategoryFor(initialGuardian);
  const memberFields=[0,1,2,3].map(i=>{let current=(q.members||[])[i]||'',selected=(q.memberEmblems||[])[i]||[],sourceId=(q.memberAccountIds||[])[i]||a.id;let groups=Object.entries(EMBLEM_GROUPS).map(([group,items])=>`<div class="field"><label>${group}</label><div style="display:flex;flex-wrap:wrap;gap:6px 12px">${items.map(x=>`<label style="display:flex;align-items:center;gap:4px;color:var(--txt);font-size:12px"><input type="checkbox" class="q-emblem" data-slot="${i}" value="${esc(x)}" ${selected.includes(x)?'checked':''} style="width:auto">${esc(x)}</label>`).join('')}</div></div>`).join('');let c=characterByName(accountById(sourceId),current);return `<div class="field full seedslot"><label>編成 ${i+1}</label><label class="sub" for="qAccount${i}">登録元アカウント</label><select id="qAccount${i}" class="q-account">${accountOptions}</select><input list="ownedChars" id="qm${i}" value="${esc(current)}" placeholder="全アカウントの登録キャラから選択・入力" style="margin-top:7px"><div class="quest-modal-identity"><div id="qIcon${i}">${characterIconHtml(c||{name:current})}</div><div class="sub" id="qSeed${i}">${questSeedList(c)}</div></div><details><summary style="cursor:pointer;color:var(--cyan);margin:7px 0">このキャラクターの紋章をカテゴリー別に登録</summary><div style="display:grid;gap:8px;margin-top:8px">${groups}</div></details></div>`}).join('');
- showModal('クエスト編成',`<div class="formgrid"><div class="field full"><label>クエスト名 *</label><input id="qName" value="${esc(q.name||'')}" placeholder="例：天魔の孤城 第○の間"></div><div class="field"><label>カテゴリー</label><select id="qCat">${QUEST_CATEGORIES.map(x=>`<option ${q.category===x?'selected':''}>${x}</option>`).join('')}${q.category&&!QUEST_CATEGORIES.includes(q.category)?`<option selected>${esc(q.category)}</option>`:''}</select></div><div class="field"><label>守護獣</label><input list="guardianBeasts" id="qGuardian" value="${esc(q.guardianBeast||'')}" placeholder="候補から選択または手入力"><div id="guardianPreview" class="guardian-select-preview">${guardianBadge(q.guardianBeast)}</div></div>${memberFields}<datalist id="ownedChars">${opts}</datalist><datalist id="guardianBeasts">${guardianList}</datalist><div class="field full"><label>攻略手順・周回メモ</label><textarea id="qMemo">${esc(q.memo||'')}</textarea></div></div>`,`保存する`,()=>{let name=$('#qName').value.trim();if(!name){toast('クエスト名を入力してください');return false}let members=[0,1,2,3].map(i=>$('#qm'+i).value.trim()),memberAccountIds=[0,1,2,3].map(i=>$('#qAccount'+i).value),memberEmblems=[0,1,2,3].map(i=>[...document.querySelectorAll(`.q-emblem[data-slot="${i}"]:checked`)].map(x=>x.value));let item={id:q.id||crypto.randomUUID(),name,category:$('#qCat').value,guardianBeast:$('#qGuardian').value.trim(),members,memberAccountIds,memberEmblems,memo:$('#qMemo').value};if(q.id)Object.assign(q,item);else a.quests.push(item);save();toast('編成を保存しました')});
+ showModal('クエスト編成',`<div class="formgrid"><div class="field full"><label>クエスト名 *</label><input id="qName" value="${esc(q.name||'')}" placeholder="例：天魔の孤城 第○の間"></div><div class="field"><label>カテゴリー</label><select id="qCat">${QUEST_CATEGORIES.map(x=>`<option ${q.category===x?'selected':''}>${x}</option>`).join('')}${q.category&&!QUEST_CATEGORIES.includes(q.category)?`<option selected>${esc(q.category)}</option>`:''}</select></div><div class="field full guardian-picker-field"><label>守護獣（カテゴリーから選択）</label><select id="qGuardianCategory">${guardianCategoryOptions(initialGuardianCategory)}</select><select id="qGuardian" aria-label="守護獣を選択" ${initialGuardianCategory?'':'disabled'}>${guardianChoiceOptions(initialGuardianCategory,initialGuardian)}</select><div id="guardianPreview" class="guardian-select-preview">${guardianBadge(q.guardianBeast)}</div><div class="guardian-category-hint">カテゴリーを選ぶと、そのカテゴリーの守護獣だけが表示されます。アイコンをクリックして選択することもできます。</div><div id="guardianPicker" class="guardian-picker"><div id="guardianPickerGrid" class="guardian-picker-grid">${guardianPickerItems(initialGuardianCategory,initialGuardian)}</div></div></div>${memberFields}<datalist id="ownedChars">${opts}</datalist><div class="field full"><label>攻略手順・周回メモ</label><textarea id="qMemo">${esc(q.memo||'')}</textarea></div></div>`,`保存する`,()=>{let name=$('#qName').value.trim();if(!name){toast('クエスト名を入力してください');return false}let members=[0,1,2,3].map(i=>$('#qm'+i).value.trim()),memberAccountIds=[0,1,2,3].map(i=>$('#qAccount'+i).value),memberEmblems=[0,1,2,3].map(i=>[...document.querySelectorAll(`.q-emblem[data-slot="${i}"]:checked`)].map(x=>x.value));let item={id:q.id||crypto.randomUUID(),name,category:$('#qCat').value,guardianBeast:$('#qGuardian').value.trim(),members,memberAccountIds,memberEmblems,memo:$('#qMemo').value};if(q.id)Object.assign(q,item);else a.quests.push(item);save();toast('編成を保存しました')});
  [0,1,2,3].forEach(i=>{let acc=$('#qAccount'+i),input=$('#qm'+i);acc.value=(q.memberAccountIds||[])[i]||a.id;const update=()=>{const name=input.value.trim(),record=characterByName(accountById(acc.value),name);$('#qSeed'+i).innerHTML=questSeedList(record);$('#qIcon'+i).innerHTML=characterIconHtml(record||{name});};input.addEventListener('input',update);acc.addEventListener('change',update)});
- const guardianInput=$('#qGuardian'); const updateGuardianPreview=()=>$('#guardianPreview').innerHTML=guardianBadge(guardianInput.value.trim()); guardianInput.addEventListener('input',updateGuardianPreview);
+ const guardianCategory=$('#qGuardianCategory'), guardianInput=$('#qGuardian'), pickerGrid=$('#guardianPickerGrid');
+ const updateGuardianPreview=()=>{$('#guardianPreview').innerHTML=guardianBadge(guardianInput.value);pickerGrid.innerHTML=guardianPickerItems(guardianCategory.value,guardianInput.value);};
+ guardianCategory.addEventListener('change',()=>{guardianInput.innerHTML=guardianChoiceOptions(guardianCategory.value,'');guardianInput.disabled=!guardianCategory.value;updateGuardianPreview();});
+ guardianInput.addEventListener('change',updateGuardianPreview);
+ pickerGrid.onclick=e=>{const btn=e.target.closest('[data-guardian-choice]');if(!btn)return;guardianInput.value=btn.dataset.guardianChoice;updateGuardianPreview();};
 }
 function exPage(v,a){
  const targets=a.exTargets||(a.exTargets=[]);
