@@ -148,7 +148,6 @@ const SUPABASE_PUBLISHABLE_KEY='sb_publishable_p0hUUf7xQ5qCPT3CitUCKw_YxAqGwVY';
 const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
 let cloudUser=null,cloudRowExists=false;
 let autoSyncReady=false,autoSyncBusy=false,autoSyncTimer=null,autoSyncPoll=null,autoSyncDirty=false,autoSyncTimestamp=null,autoSyncUserId=null,autoSyncGeneration=0;
-let repairedAfterCloudLoad=0;
 let autoSyncAppliedSnapshot='';
 const USAGE_INSTALL_KEY='monst_master_usage_install_v1';
 let usageAdmin=false;
@@ -190,36 +189,7 @@ const verifiedGachaNo=new Map(DEX_SEED.filter(x=>['火','水','木','光','闇']
 for(const x of state.gachaDex){if(!['火','水','木','光','闇'].includes(x.element)&&verifiedGachaNo.has(Number(x.dexNo)))x.element=verifiedGachaNo.get(Number(x.dexNo));}
 state.accounts.forEach(a=>{a.exRuns=a.exRuns||[];if(!Array.isArray(a.exTargets)){const grouped={};a.exRuns.forEach(x=>{const n=x.name||'名称未設定';if(!grouped[n])grouped[n]={id:crypto.randomUUID(),name:n,runs:0,encounters:0,wins:0,losses:0,drops:0};grouped[n].runs+=Number(x.count)||0;grouped[n].encounters+=Number(x.encounters)||0;grouped[n].wins+=Number(x.wins)||0});a.exTargets=Object.values(grouped)} });
 function load(){try{let x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.accounts)&&x.accounts.length)return x}catch(e){}return {accounts:[blank()],active:null}}
-// v37: Fill missing attributes in existing owned characters without touching user-entered attributes.
-// Prefer exact dex ID/number. Fall back to name only when every matching dex entry has the same confirmed element.
-function repairOwnedCharacterElements(){
- const valid=new Set(['火','水','木','光','闇']);
- const byId=new Map(),byNo=new Map(),byName=new Map();
- for(const d of state.gachaDex||[]){
-  if(!valid.has(d.element))continue;
-  if(d.id!=null)byId.set(String(d.id),d.element);
-  const no=Number(d.dexNo);
-  if(Number.isSafeInteger(no)&&no>0){const old=byNo.get(no);byNo.set(no,old&&old!==d.element?'':d.element)}
-  const key=dexNormalizedName(d.name);
-  if(key){const old=byName.get(key);byName.set(key,old&&old!==d.element?'':d.element)}
- }
- let updated=0;
- for(const account of state.accounts||[]){
-  for(const c of account.characters||[]){
-   if(!c||valid.has(c.element))continue; // Never overwrite recorded attributes.
-   let el='';
-   if(c.dexId!=null&&byId.has(String(c.dexId)))el=byId.get(String(c.dexId));
-   if(!el&&Number(c.dexNo)>0)el=byNo.get(Number(c.dexNo))||'';
-   // Name fallback is only safe when a legacy character has no dex identifier.
-   if(!el&&!c.dexId&&!Number(c.dexNo))el=byName.get(dexNormalizedName(c.name))||'';
-   if(valid.has(el)){c.element=el;updated++}
-  }
- }
- return updated;
-}
-function save(){repairOwnedCharacterElements();localStorage.setItem(KEY,JSON.stringify(state));markAutoSyncDirty();render()}
-// Repair previously saved local holdings at startup, even if the user does not edit them.
-if(repairOwnedCharacterElements())localStorage.setItem(KEY,JSON.stringify(state));
+function save(){localStorage.setItem(KEY,JSON.stringify(state));markAutoSyncDirty();render()}
 function acct(){return state.accounts.find(a=>a.id===state.active)||state.accounts[0]}
 function cloudMessage(message){const el=$('#cloudStatus');if(el)el.textContent=message}
 function setCloudButtons(){const signed=!!cloudUser;$('#googleLoginBtn').classList.toggle('hide',signed);$('#googleLogoutBtn').classList.toggle('hide',!signed);$('#cloudCheckBtn').disabled=!signed;$('#cloudUploadBtn').disabled=!signed;$('#cloudDownloadBtn').disabled=!signed||!cloudRowExists}
@@ -230,7 +200,6 @@ function applyRemoteState(d){
  if(!validCloudData(d))return false;
  state={...d,accounts:d.accounts.map(a=>({...blank(a.name),...a,characters:a.characters||[],quests:a.quests||[],exRuns:a.exRuns||[],exTargets:a.exTargets||[]})),gachaDex:Array.isArray(d.gachaDex)?d.gachaDex:state.gachaDex,dexMarkedUnowned:Array.isArray(d.dexMarkedUnowned)?d.dexMarkedUnowned:[],active:d.active&&d.accounts.some(a=>a.id===d.active)?d.active:d.accounts[0].id};
  for(const x of (state.gachaDex||[])){if(!['火','水','木','光','闇'].includes(x.element)&&verifiedGachaNo.has(Number(x.dexNo)))x.element=verifiedGachaNo.get(Number(x.dexNo));}
- repairedAfterCloudLoad=repairOwnedCharacterElements();
  localStorage.setItem(KEY,JSON.stringify(state));autoSyncDirty=false;autoSyncAppliedSnapshot=syncSnapshot(state);render();return true;
 }
 function markAutoSyncDirty(){if(!cloudUser||!autoSyncReady)return;autoSyncDirty=true;cloudMessage('変更を自動保存しています…');clearTimeout(autoSyncTimer);autoSyncTimer=setTimeout(()=>flushAutoSync(),1000)}
@@ -238,7 +207,7 @@ async function getCloudRow(){return await supabaseClient.from('user_data').selec
 function pauseAutoSync(message){autoSyncReady=false;autoSyncDirty=false;clearTimeout(autoSyncTimer);cloudMessage(message)}
 async function initAutoSync(){
  if(!cloudUser)return;
- const thisUser=cloudUser.id; const run=++autoSyncGeneration;repairedAfterCloudLoad=0;autoSyncReady=false;autoSyncDirty=false;clearTimeout(autoSyncTimer);
+ const thisUser=cloudUser.id; const run=++autoSyncGeneration;autoSyncReady=false;autoSyncDirty=false;clearTimeout(autoSyncTimer);
  cloudMessage('Googleアカウントのデータを確認中…');
  const {data:remote,error}=await getCloudRow();if(run!==autoSyncGeneration||cloudUser?.id!==thisUser)return;
  if(error){cloudMessage('自動同期に接続できません：'+error.message);return}
@@ -252,7 +221,6 @@ async function initAutoSync(){
   applyRemoteState(remote.data);
  }else if(remote){pauseAutoSync('クラウドの保存形式に問題があります。自動で上書きせず停止しました。');return}
  autoSyncReady=true;autoSyncUserId=thisUser;autoSyncAppliedSnapshot=syncSnapshot(state);
- if(remote&&repairedAfterCloudLoad){autoSyncDirty=true;clearTimeout(autoSyncTimer);autoSyncTimer=setTimeout(flushAutoSync,1100);}
  if(!remote){if(hasLocalWork(state)&&!confirm('このGoogleアカウントにはまだデータがありません。\nこの端末の既存データを最初のクラウドデータとして登録しますか？\n\nOK：端末データをクラウドに保存（推奨）\nキャンセル：同期を一時停止してバックアップを確認')){pauseAutoSync('クラウドへの初回保存を保留しました。端末データは保持しています。');return}autoSyncDirty=true;await flushAutoSync();}
  cloudMessage('Googleアカウントに自動同期中 ✓（変更後に自動保存・他端末にも反映）');
  if(autoSyncPoll)clearInterval(autoSyncPoll);
@@ -288,7 +256,7 @@ async function pollAutoSync(){
   if(data.updated_at===autoSyncTimestamp)return;
   if(syncSnapshot(state)!==autoSyncAppliedSnapshot){pauseAutoSync('この端末に未同期の変更があるため、別端末データで上書きしませんでした。バックアップしてから確認してください。');return}
   if(!validCloudData(data.data)){pauseAutoSync('クラウドデータが不正のため、端末には反映しませんでした。');return}
-  autoSyncTimestamp=data.updated_at;applyRemoteState(data.data);if(repairedAfterCloudLoad){autoSyncDirty=true;clearTimeout(autoSyncTimer);autoSyncTimer=setTimeout(flushAutoSync,1100)}cloudMessage('別端末の更新を自動反映しました ✓');
+  autoSyncTimestamp=data.updated_at;applyRemoteState(data.data);cloudMessage('別端末の更新を自動反映しました ✓');
  }catch(err){cloudMessage('他端末の更新確認に失敗しました。次回再試行します。')}
 }
 async function refreshCloudState(){if(!cloudUser){cloudRowExists=false;cloudMessage('未ログインです。Googleでログインすると自動同期できます。');setCloudButtons();return}
@@ -848,9 +816,9 @@ function settings(v,a){v.innerHTML=head('データ管理','アカウントのバ
 function showModal(title,body,ok,callback){$('#modalRoot').innerHTML=`<div class="modalback"><div class="modal"><div class="modalhead"><h3>${title}</h3><button id="closeModal">✕</button></div>${body}<div class="toolbar" style="justify-content:flex-end;margin:16px 0 0"><button id="cancelModal">キャンセル</button><button class="primary" id="okModal">${ok}</button></div></div></div>`;$('#closeModal').onclick=$('#cancelModal').onclick=()=>$('#modalRoot').innerHTML='';$('#okModal').onclick=()=>{if(callback()!==false)$('#modalRoot').innerHTML=''}}
 function download(obj,name){let blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=name;link.click();URL.revokeObjectURL(url);toast('バックアップを作成しました')}
 function exportData(){download({...state,version:1,exportedAt:new Date().toISOString()},'monst-master-backup.json')}
-function importData(e){let file=e.target.files?.[0];if(!file)return;let reader=new FileReader();reader.onload=()=>{try{let d=JSON.parse(reader.result);if(!Array.isArray(d.accounts)||!d.accounts.length)throw Error('形式が違います');if(!confirm('現在の全データを読み込んだデータで置き換えます。事前にバックアップしましたか？'))return;state={...d,accounts:d.accounts.map(a=>({...blank(a.name),...a,characters:a.characters||[],quests:a.quests||[],exRuns:a.exRuns||[],exTargets:a.exTargets||[]})),gachaDex:Array.isArray(d.gachaDex)?d.gachaDex:state.gachaDex,dexMarkedUnowned:Array.isArray(d.dexMarkedUnowned)?d.dexMarkedUnowned:[],active:d.active&&d.accounts.some(a=>a.id===d.active)?d.active:d.accounts[0].id};repairOwnedCharacterElements();save();toast('データを復元しました')}catch(err){alert('読み込めませんでした。MONST MASTERのJSONバックアップを選択してください。')}};reader.readAsText(file);e.target.value=''}
+function importData(e){let file=e.target.files?.[0];if(!file)return;let reader=new FileReader();reader.onload=()=>{try{let d=JSON.parse(reader.result);if(!Array.isArray(d.accounts)||!d.accounts.length)throw Error('形式が違います');if(!confirm('現在の全データを読み込んだデータで置き換えます。事前にバックアップしましたか？'))return;state={...d,accounts:d.accounts.map(a=>({...blank(a.name),...a,characters:a.characters||[],quests:a.quests||[],exRuns:a.exRuns||[],exTargets:a.exTargets||[]})),gachaDex:Array.isArray(d.gachaDex)?d.gachaDex:state.gachaDex,dexMarkedUnowned:Array.isArray(d.dexMarkedUnowned)?d.dexMarkedUnowned:[],active:d.active&&d.accounts.some(a=>a.id===d.active)?d.active:d.accounts[0].id};save();toast('データを復元しました')}catch(err){alert('読み込めませんでした。MONST MASTERのJSONバックアップを選択してください。')}};reader.readAsText(file);e.target.value=''}
 
-/* v37: registered-character element repair; v35: verified catalogue feed. Do not overwrite user edits, holdings or manually marked unowned. */
+/* v35: verified catalogue feed. Do not overwrite user edits, holdings or manually marked unowned. */
 const MONST_CATALOG_URL='./catalog/latest.json';
 const MONST_CATALOG_LAST_KEY='monst_master_catalog_checked_v35';
 let monstCatalogBusy=false;
@@ -894,15 +862,14 @@ async function updateMonstCatalog(force=false){
   const v=applyMonstCatalog(data);
   localStorage.setItem('monst_master_catalog_cache_v35',JSON.stringify(data));
   localStorage.setItem(MONST_CATALOG_LAST_KEY,String(Date.now()));
-  const repaired=repairOwnedCharacterElements();
-  if(v.attr||v.added||repaired){localStorage.setItem(KEY,JSON.stringify(state));markAutoSyncDirty()}
+  if(v.attr||v.added){localStorage.setItem(KEY,JSON.stringify(state));markAutoSyncDirty()}
   if(v.attr||v.added||v.ex)render();
   if(status)status.textContent='図鑑のデータ更新：'+(data.generated_at||'日時不明')+' / 属性補完 '+v.attr+'件、新キャラ '+v.added+'件、EX候補 '+v.ex+'件';
  }catch(err){if(status)status.textContent='図鑑自動更新：取得できませんでした（'+err.message+'）。既存データは維持します。'}
  finally{monstCatalogBusy=false}
 }
 window.addEventListener('load',()=>{
- try{const stored=localStorage.getItem('monst_master_catalog_cache_v35');if(stored){applyMonstCatalog(JSON.parse(stored));if(repairOwnedCharacterElements())localStorage.setItem(KEY,JSON.stringify(state));}}catch(e){}
+ try{const stored=localStorage.getItem('monst_master_catalog_cache_v35');if(stored)applyMonstCatalog(JSON.parse(stored));}catch(e){}
  updateMonstCatalog();document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateMonstCatalog()});
 });
 
