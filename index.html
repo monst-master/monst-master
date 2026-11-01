@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MONST MASTER v35 Auto Catalog</title>
+<title>MONST MASTER v43 Community</title>
 <style>
 :root{--bg:#080d18;--panel:#111b2c;--panel2:#17243a;--line:#263752;--txt:#eef4ff;--muted:#9aacc7;--blue:#59b8ff;--cyan:#62e4e8;--gold:#ffc96b;--red:#ff7384;--green:#6de0ae;--shadow:0 12px 34px #0005}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% -10%,#16365b 0,transparent 38%),radial-gradient(ellipse at 100% 0,#20264c 0,transparent 30%),var(--bg);color:var(--txt);font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid var(--line);background:#1a2a43;color:var(--txt);border-radius:10px;padding:9px 13px}button:hover{border-color:var(--blue);filter:brightness(1.12)}button.primary{background:linear-gradient(120deg,#167ac2,#3759bc);border:0}button.danger{color:#ff9aa5}input,select,textarea{width:100%;background:#0b1423;color:var(--txt);border:1px solid var(--line);border-radius:9px;padding:10px;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--blue)}textarea{min-height:76px;resize:vertical}.app{max-width:1440px;margin:auto;padding:22px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}.brand{display:flex;align-items:center;gap:13px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#3bd6e8,#3974d8 60%,#8d63dc);display:grid;place-items:center;color:#061323;font-weight:1000;font-size:20px;box-shadow:0 0 28px #43c8f766}.brand h1{font-size:20px;letter-spacing:2px;margin:0}.brand small{color:var(--muted);letter-spacing:2px}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.layout{display:grid;grid-template-columns:230px 1fr;gap:18px}.sidebar,.panel,.stat{background:linear-gradient(160deg,#142238ee,#0e1727f2);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.sidebar{padding:13px;height:max-content;position:sticky;top:14px}.account-label{font-size:11px;color:var(--muted);margin:4px 7px 7px}.nav{display:grid;gap:5px;margin-top:16px}.nav button{text-align:left;background:transparent;border-color:transparent;color:#bdcbe0}.nav button.active{background:#1b3656;border-color:#31577e;color:#fff}.nav button span{display:inline-block;width:27px;color:var(--cyan)}.content{min-width:0}.page-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:3px 0 16px}.page-head h2{margin:0;font-size:23px}.sub{color:var(--muted);font-size:12px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:15px}.stat{padding:16px}.stat .k{color:var(--muted);font-size:12px}.stat .v{font-size:27px;font-weight:800;margin-top:5px}.stat .v em{font-style:normal;font-size:12px;color:var(--muted);font-weight:500}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel{padding:17px;margin-bottom:14px}.panel h3{font-size:15px;margin:0 0 13px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.toolbar>*{max-width:230px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.field label{display:block;color:var(--muted);font-size:12px;margin:0 0 5px}.field.full{grid-column:1/-1}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:620px}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid #263752;font-size:13px}th{color:var(--muted);font-weight:600;white-space:nowrap}.empty{text-align:center;color:var(--muted);padding:28px}.pill{display:inline-block;padding:3px 8px;border-radius:99px;background:#203b59;color:#aee1ff;font-size:11px}.pill.gold{background:#49371c;color:#ffdc9a}.pill.green{background:#173d36;color:#9af0c8}.actions{display:flex;gap:6px}.actions button{padding:5px 8px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}.charcard{background:#0d1829;border:1px solid var(--line);border-radius:12px;padding:13px}.charcard strong{display:block;font-size:15px}.charcard small{color:var(--muted)}.charcard .bottom{display:flex;justify-content:space-between;align-items:center;margin-top:10px}.counter{display:flex;align-items:center;gap:10px}.counter strong{font-size:28px;min-width:45px;text-align:center}.counter button{font-size:18px;padding:5px 12px}.progress{height:8px;background:#263752;border-radius:20px;overflow:hidden;margin-top:10px}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan))}.muted{color:var(--muted)}.right{margin-left:auto}.hide{display:none!important}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1d3c55;border:1px solid #4d88b8;padding:10px 17px;border-radius:12px;box-shadow:var(--shadow);z-index:9}.modalback{position:fixed;inset:0;background:#0009;display:grid;place-items:center;padding:15px;z-index:10}.modal{width:min(620px,100%);max-height:90vh;overflow:auto;background:#111d30;border:1px solid #385071;border-radius:17px;padding:20px;box-shadow:var(--shadow)}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.modalhead h3{margin:0}.seedslot{padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1829}.footer{color:#7185a3;text-align:center;font-size:11px;margin:20px 0 5px}
@@ -117,10 +117,42 @@
 #luckList .seed-display .seed-grade-icon{display:block;width:36px;height:36px;object-fit:contain;flex:none}
 #luckList .seed-display span{display:block;white-space:nowrap;word-break:keep-all;overflow-wrap:normal;writing-mode:horizontal-tb;font-size:12px;line-height:1.5;text-align:center}
 @media(max-width:620px){#luckList table{min-width:1110px}#luckList .seed-display .seed-grade-icon{width:34px;height:34px}}
+
+/* v43: Community pages */
+.shared-tier-grid{display:flex;flex-direction:column;gap:12px}
+.shared-tier-lane{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel2)}
+.shared-tier-title{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;background:#1f314f}
+.shared-tier-title strong{font-size:18px;letter-spacing:1px;white-space:nowrap}
+.shared-rank-SSS{border-left:6px solid #f5b642}.shared-rank-SS{border-left:6px solid #cb9bff}.shared-rank-S{border-left:6px solid #ff7d93}.shared-rank-A{border-left:6px solid #69bdff}.shared-rank-B{border-left:6px solid #6ddbad}.shared-rank-C{border-left:6px solid #97aac2}
+.shared-tier-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px;padding:9px}
+.shared-tier-card{min-width:0;display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:9px;background:var(--panel);padding:8px}
+.shared-portrait{flex:none;width:43px;height:43px;object-fit:cover;border-radius:8px;background:#243a5b}
+.shared-empty-icon{display:flex;justify-content:center;align-items:center;color:var(--muted);font-weight:700}
+.shared-tier-data{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.shared-tier-data strong,.shared-single-line{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shared-tier-data span,.shared-tier-data small{font-size:11px;color:var(--muted)}
+.shared-small-btn{flex:none;font-size:12px;padding:6px 8px}
+.shared-note{white-space:pre-wrap;overflow-wrap:anywhere;max-height:100px;overflow-y:auto;margin:5px 0 0;font-size:12px}
+.shared-edit{margin-top:14px;border-color:var(--blue)}
+.shared-search-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:6px;max-height:250px;overflow-y:auto;margin-top:9px}
+.shared-result{display:flex;gap:7px;align-items:center;text-align:left;min-width:0;padding:5px 7px}
+.shared-result .shared-portrait{height:35px;width:35px}
+.shared-result small{display:block;color:var(--muted)}
+.shared-selected{display:flex;align-items:center;gap:8px;margin-top:9px;min-height:35px;overflow-wrap:anywhere}
+.shared-check-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:6px}
+.shared-check-grid label{display:flex;align-items:center;gap:7px;padding:7px 9px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;white-space:normal}
+.shared-check-grid input{width:auto;flex:none}
+.shared-pred-list{display:grid;gap:12px}
+.shared-pred-card{min-width:0;padding:14px;background:var(--panel2);border:1px solid var(--line);border-radius:12px}
+.shared-pred-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:9px}
+.shared-pred-top strong{font-size:16px;overflow-wrap:anywhere}
+.shared-tags{display:flex;flex-wrap:wrap;gap:6px}
+.shared-tags span{background:#263958;border:1px solid #375578;border-radius:18px;padding:4px 9px;font-size:12px}
+@media(max-width:600px){.shared-tier-cards{grid-template-columns:1fr}.shared-result{max-width:100%}.shared-check-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.shared-check-grid label{font-size:12px}}
 </style></head>
 <body><div class="app">
 <header class="top"><div class="brand"><div class="logo">M</div><div><h1>MONST MASTER</h1><small>PLAYER DATA MANAGEMENT</small></div></div><div class="top-actions"><button id="exportBtn">↓ バックアップ</button><button id="importBtn">↑ 復元</button><input id="importFile" type="file" accept="application/json" class="hide"></div></header>
-<div class="layout"><aside class="sidebar"><div class="account-label">管理中のアカウントを切り替え</div><select id="accountSelect" aria-label="管理するアカウント"></select><div class="toolbar" style="margin:9px 0 0"><button class="primary" id="addAccount">＋ アカウント追加</button><button id="renameAccount">名前変更</button></div><nav class="nav" id="nav"><button class="active" data-page="dashboard"><span>⌂</span>ダッシュボード</button><button data-page="characters"><span>♙</span>所持キャラ</button><button data-page="gachaDex"><span>▦</span>キャラ図鑑</button><button data-page="luck"><span>✦</span>わくわく厳選</button><button data-page="quests"><span>⚔</span>クエスト編成</button><button data-page="ex"><span>◇</span>EX周回カウンター</button><button data-page="calculators"><span>∑</span>計算ツール</button><button data-page="settings"><span>⚙</span>データ管理</button></nav></aside>
+<div class="layout"><aside class="sidebar"><div class="account-label">管理中のアカウントを切り替え</div><select id="accountSelect" aria-label="管理するアカウント"></select><div class="toolbar" style="margin:9px 0 0"><button class="primary" id="addAccount">＋ アカウント追加</button><button id="renameAccount">名前変更</button></div><nav class="nav" id="nav"><button class="active" data-page="dashboard"><span>⌂</span>ダッシュボード</button><button data-page="characters"><span>♙</span>所持キャラ</button><button data-page="gachaDex"><span>▦</span>キャラ図鑑</button><button data-page="communityTiers"><span>♛</span>キャラクターティア表</button><button data-page="luck"><span>✦</span>わくわく厳選</button><button data-page="quests"><span>⚔</span>クエスト編成</button><button data-page="questPredictions"><span>⌕</span>クエストギミック予想</button><button data-page="ex"><span>◇</span>EX周回カウンター</button><button data-page="calculators"><span>∑</span>計算ツール</button><button data-page="settings"><span>⚙</span>データ管理</button></nav></aside>
 <main class="content" id="view"></main></div><section class="panel" id="usagePanel" style="margin:0 0 16px">
 <h3>📊 利用状況について</h3>
 <p class="muted">Googleでログインして利用すると、サービス改善のため匿名の端末識別子・利用日・開いた機能名を自動集計します。所持キャラ、厳選記録、ゲームアカウント名、Googleメールアドレスは統計用に送信しません。ログアウト中は集計しません。</p>
@@ -363,7 +395,7 @@ async function refreshCloudState(){if(!cloudUser){cloudRowExists=false;cloudMess
  await pollAutoSync();cloudMessage('ログイン中：'+cloudUser.email+' ／ 自動同期有効 ✓');}
 async function cloudLogin(){const {error}=await supabaseClient.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.href.split('#')[0]}});if(error)cloudMessage('ログイン開始エラー：'+error.message)}
 async function cloudLogout(){clearTimeout(autoSyncTimer);if(autoSyncPoll)clearInterval(autoSyncPoll);++autoSyncGeneration;autoSyncReady=false;
- const {error}=await supabaseClient.auth.signOut();if(error){cloudMessage('ログアウトエラー：'+error.message);return}cloudUser=null;cloudRowExists=false;setCloudButtons();recordUsageOnLogin();cloudMessage('ログアウトしました。端末のデータは維持されます。')}
+ const {error}=await supabaseClient.auth.signOut();if(error){cloudMessage('ログアウトエラー：'+error.message);return}cloudUser=null;cloudRowExists=false;setCloudButtons();sharedSessionChanged();recordUsageOnLogin();cloudMessage('ログアウトしました。端末のデータは維持されます。')}
 async function cloudUpload(){if(!cloudUser)return;
  if(!confirm('この端末の全データをGoogleアカウント側に保存します。\n\n先にJSONバックアップを保存してください。すでにクラウドにあるデータを置き換えてもよろしいですか？'))return;
  const {data:remote,error}=await getCloudRow();if(error){cloudMessage('クラウド確認エラー：'+error.message);return}
@@ -385,8 +417,8 @@ async function cloudDownload(){if(!cloudUser)return;
  cloudMessage('クラウドデータを反映しました。以後は自動同期します ✓');setCloudButtons();}
 async function initCloud(){if(!window.supabase){cloudMessage('Supabaseを読み込めません。ネット接続を確認してください。');return}
  $('#googleLoginBtn').onclick=cloudLogin;$('#googleLogoutBtn').onclick=cloudLogout;$('#cloudCheckBtn').onclick=refreshCloudState;$('#cloudUploadBtn').onclick=cloudUpload;$('#cloudDownloadBtn').onclick=cloudDownload;
- const {data:{session}}=await supabaseClient.auth.getSession();cloudUser=session?.user||null;setCloudButtons();recordUsageOnLogin();if(cloudUser)await initAutoSync();else cloudMessage('Googleログインで他端末との自動同期を開始できます。');
- supabaseClient.auth.onAuthStateChange((event,session)=>{const next=session?.user||null;const changed=next?.id!==cloudUser?.id;cloudUser=next;setCloudButtons();recordUsageOnLogin();if(changed){if(autoSyncPoll)clearInterval(autoSyncPoll);clearTimeout(autoSyncTimer);++autoSyncGeneration;autoSyncReady=false;if(next)setTimeout(initAutoSync,0);else cloudMessage('未ログインです。')}refreshUsageAdmin()});await refreshUsageAdmin();}
+ const {data:{session}}=await supabaseClient.auth.getSession();cloudUser=session?.user||null;setCloudButtons();sharedSessionChanged();recordUsageOnLogin();if(cloudUser)await initAutoSync();else cloudMessage('Googleログインで他端末との自動同期を開始できます。');
+ supabaseClient.auth.onAuthStateChange((event,session)=>{const next=session?.user||null;const changed=next?.id!==cloudUser?.id;cloudUser=next;setCloudButtons();if(changed)sharedSessionChanged();recordUsageOnLogin();if(changed){if(autoSyncPoll)clearInterval(autoSyncPoll);clearTimeout(autoSyncTimer);++autoSyncGeneration;autoSyncReady=false;if(next)setTimeout(initAutoSync,0);else cloudMessage('未ログインです。')}refreshUsageAdmin()});await refreshUsageAdmin();}
 // 匿名利用状況: Googleログイン中のみ統計イベントを送信。
 function usageConsent(){return !!cloudUser}
 function getUsageInstallId(){let id=localStorage.getItem(USAGE_INSTALL_KEY);if(!id){id=crypto.randomUUID();localStorage.setItem(USAGE_INSTALL_KEY,id)}return id}
@@ -431,11 +463,159 @@ function renderUsageStats(data){
  target.innerHTML=`<div class="stats" style="grid-template-columns:repeat(2,minmax(0,1fr))">${stat('今日の利用端末（DAU）',n(data.dau),'')}${stat('過去30日の利用端末（MAU）',n(data.mau),'')}${stat('DAU/MAU',ratio,'%')}${stat('今日の利用イベント',n(data.today_events),'件')}</div><p class="muted">日ごと・機能ごとの端末概算値です。計測に同意したブラウザのみを集計します。期間はUTC基準で、同一人物の複数端末は別々に数えます。</p><h4>直近14日の日別利用</h4><div class="tablewrap"><table><thead><tr><th>日付（UTC）</th><th>端末数</th><th>イベント数</th></tr></thead><tbody>${days||'<tr><td colspan="3">データなし</td></tr>'}</tbody></table></div><h4>過去30日の機能別利用端末数</h4><div class="tablewrap"><table><thead><tr><th>機能</th><th>端末数</th></tr></thead><tbody>${features||'<tr><td colspan="2">データなし</td></tr>'}</tbody></table></div>`;
 }
 async function showUsageAnalytics(){const el=$('#analyticsResults');el.textContent='統計を取得中…';const {data,error}=await supabaseClient.rpc('mm_get_usage_stats');if(error){el.textContent='取得エラー：'+error.message;return}renderUsageStats(data)}
-function init(){if(!state.active)state.active=state.accounts[0].id;$('#accountSelect').innerHTML=state.accounts.map(a=>`<option value="${a.id}">${esc(a.name)}</option>`).join('');$('#accountSelect').value=acct().id;$('#accountSelect').onchange=e=>{state.active=e.target.value;save()};$('#nav').addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(!b)return;page=b.dataset.page;render();trackUsage('feature',page)});$('#addAccount').onclick=()=>{let n=prompt('新しいアカウント名（例：サブ2）');if(!n?.trim())return;let a=blank(n.trim());state.accounts.push(a);state.active=a.id;save();toast('アカウントを追加しました')};$('#renameAccount').onclick=()=>{let n=prompt('アカウント名',acct().name);if(n?.trim()){acct().name=n.trim();save()}};$('#exportBtn').onclick=exportData;$('#importBtn').onclick=()=>$('#importFile').click();$('#importFile').onchange=importData;render();initUsage();initCloud()}
+function init(){if(!state.active)state.active=state.accounts[0].id;$('#accountSelect').innerHTML=state.accounts.map(a=>`<option value="${a.id}">${esc(a.name)}</option>`).join('');$('#accountSelect').value=acct().id;$('#accountSelect').onchange=e=>{state.active=e.target.value;save()};$('#nav').addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(!b)return;page=b.dataset.page;sharedEditor=null;sharedEditingId=null;render();trackUsage('feature',page)});$('#addAccount').onclick=()=>{let n=prompt('新しいアカウント名（例：サブ2）');if(!n?.trim())return;let a=blank(n.trim());state.accounts.push(a);state.active=a.id;save();toast('アカウントを追加しました')};$('#renameAccount').onclick=()=>{let n=prompt('アカウント名',acct().name);if(n?.trim()){acct().name=n.trim();save()}};$('#exportBtn').onclick=exportData;$('#importBtn').onclick=()=>$('#importFile').click();$('#importFile').onchange=importData;render();initUsage();initCloud()}
 function toast(t){$('#toastRoot').innerHTML=`<div class="toast">${esc(t)}</div>`;setTimeout(()=>$('#toastRoot').innerHTML='',2200)}
 function head(title,sub,action=''){return `<div class="page-head"><div><h2>${title}</h2><div class="sub">${sub}</div></div>${action}</div>`}
 function stat(label,value,unit=''){return `<div class="stat"><div class="k">${label}</div><div class="v">${value}<em> ${unit}</em></div></div>`}
-function render(){let a=acct();$('#accountSelect').innerHTML=state.accounts.map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join('');$('#accountSelect').value=a.id;$('#nav').querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));let v=$('#view');({dashboard:dashboard,characters:characters,gachaDex:gachaDex,luck:luck,quests:quests,ex:exPage,calculators:calculators,settings:settings}[page]||dashboard)(v,a)}
+function render(){let a=acct();$('#accountSelect').innerHTML=state.accounts.map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join('');$('#accountSelect').value=a.id;$('#nav').querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));let v=$('#view');({dashboard:dashboard,characters:characters,gachaDex:gachaDex,communityTiers:communityTiers,luck:luck,quests:quests,questPredictions:questPredictions,ex:exPage,calculators:calculators,settings:settings}[page]||dashboard)(v,a)}
+/* v43: authenticated, database-backed community collaboration. Never included in personal state or JSON backup. */
+const SHARED_TIER_TABLE='mm_community_tiers';
+const SHARED_QUEST_TABLE='mm_community_quest_predictions';
+const TIER_RANKS=['SSS','SS','S','A','B','C'];
+const PRED_GIMMICKS=['重力バリア','ダメージウォール','ワープ','地雷','ブロック','減速壁','魔法陣','転送壁','ウィンド','反射制限','貫通制限','属性効果アップ','弱点効果アップ','ハートなし','HP個別','エレメントエリア','エナジーコンテナ','回転パネル','パワーチェンジウォール','敵にふれるたびに攻撃力アップ','蘇生','毒','感染毒','混乱','レーザーバリア'];
+let sharedTierEntries=[],sharedQuestEntries=[];
+let sharedLoaded={tiers:false,quests:false},sharedErrors={tiers:'',quests:''};
+let sharedLoading={tiers:false,quests:false},sharedPollTimer=null,sharedEpoch=0;
+let sharedEditor=null,sharedEditingId=null,sharedSelectedKey='',sharedFilter='',sharedQuestFilter='';
+function sharedCatalog(){return Array.isArray(state.gachaDex)?state.gachaDex:[]}
+function sharedKey(item){const no=Number(item?.dexNo);return Number.isSafeInteger(no)&&no>0?'no:'+no:'id:'+String(item?.id||'')}
+function sharedCatalogEntry(key){return sharedCatalog().find(x=>sharedKey(x)===key)}
+function sharedDate(s){if(!s)return '';const d=new Date(s);return Number.isNaN(d.getTime())?'':d.toLocaleString('ja-JP',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}
+function sharedStatus(err){if(err?.code==='23505')return 'このキャラクターはすでにティア表へ登録されています。該当キャラの「編集」からランクを変更してください。';const m=String(err?.message||err||'');if(/mm_community_|relation .* does not exist|schema cache|42P01/i.test(m))return '共有テーブルが未設定です。ZIP同梱の「SUPABASE_COMMUNITY_SETUP.sql」をSupabaseのSQL Editorで実行してください。';if(/permission|policy|42501|403|not authorized/i.test(m))return '共有データのアクセス権限を確認してください。SupabaseのRLS設定とGoogleログイン状態を確認してください。';return '共有データの通信に失敗しました：'+m.slice(0,180)}
+function sharedLoginHint(){return `<section class="panel"><p>この機能は<strong>Googleログイン利用者全員で共有</strong>します。閲覧・追加・変更にはログインが必要です。</p><p class="muted" style="margin-top:8px">ページ下部の「Googleログイン・クラウド同期」からログインしてください。</p></section>`}
+function sharedSessionChanged(){
+  ++sharedEpoch;sharedLoaded={tiers:false,quests:false};sharedErrors={tiers:'',quests:''};sharedTierEntries=[];sharedQuestEntries=[];
+  sharedEditor=null;sharedEditingId=null;sharedSelectedKey='';
+  if(sharedPollTimer){clearInterval(sharedPollTimer);sharedPollTimer=null;}
+  if(cloudUser){sharedPollTimer=setInterval(()=>{if(!document.hidden){sharedLoad('tiers',false);sharedLoad('quests',false)}},15000)}
+  if(page==='communityTiers'||page==='questPredictions')render();
+}
+async function sharedLoad(kind,announce=true){
+  if(!cloudUser||sharedLoading[kind])return;
+  const uid=cloudUser.id,epoch=sharedEpoch;
+  sharedLoading[kind]=true;let shouldRender=false;
+  try{
+    const tbl=kind==='tiers'?SHARED_TIER_TABLE:SHARED_QUEST_TABLE;
+    let data=[];
+    for(let start=0;start<10000;start+=1000){
+      const result=await supabaseClient.from(tbl).select('*').order('updated_at',{ascending:false}).order('id',{ascending:true}).range(start,start+999);
+      if(result.error)throw result.error;
+      data.push(...(result.data||[]));
+      if((result.data||[]).length<1000)break;
+    }
+    if(epoch!==sharedEpoch||cloudUser?.id!==uid)return;
+    const previous=kind==='tiers'?sharedTierEntries:sharedQuestEntries;
+    shouldRender=!sharedLoaded[kind]||!!sharedErrors[kind]||JSON.stringify(previous)!==JSON.stringify(data);
+    if(kind==='tiers')sharedTierEntries=data||[];else sharedQuestEntries=data||[];
+    sharedLoaded[kind]=true;sharedErrors[kind]='';
+  }catch(e){if(epoch!==sharedEpoch)return;const next=sharedStatus(e);shouldRender=sharedErrors[kind]!==next;sharedErrors[kind]=next}
+  finally{
+    sharedLoading[kind]=false;
+    if(epoch===sharedEpoch && shouldRender && !sharedEditor && ((kind==='tiers'&&page==='communityTiers')||(kind==='quests'&&page==='questPredictions'))){render()}
+  }
+}
+function sharedRefresh(kind){if(!cloudUser)return;sharedEditor=null;sharedEditingId=null;sharedLoad(kind)}
+function sharedIntro(kind){
+ const err=sharedErrors[kind];
+ if(err)return `<section class="panel"><p style="color:var(--red)">${esc(err)}</p><button id="communityRetry">再読み込み</button></section>`;
+ if(!sharedLoaded[kind])return `<section class="panel"><p class="muted">共有データを読み込み中…</p></section>`;
+ return '';
+}
+function sharedWriteFailure(e){alert('共有データを保存できませんでした。\n'+sharedStatus(e)+'\n\n他の利用者が先に編集した場合は、一覧を再読み込みしてから操作してください。')}
+function sharedSafeImage(item){const src=getDexIcon(item);return src?`<img class="shared-portrait" src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">`:`<div class="shared-portrait shared-empty-icon">?</div>`}
+function sharedTierForm(){
+ const editing=sharedEditingId?sharedTierEntries.find(x=>x.id===sharedEditingId):null;
+ const item=sharedCatalogEntry(sharedSelectedKey || editing?.character_key);
+ const rank=editing?.tier||'S';
+ const note=editing?.note||'';
+ return `<section class="panel shared-edit"><h3>${editing?'ティアを編集':'ティアへキャラ追加'}</h3><div class="field"><label>キャラ図鑑から選択</label>${editing?`<div class="shared-selected">${sharedSafeImage(item||editing)}<strong>${esc(editing.character_name)}</strong>（No.${esc(editing.dex_no||'—')}）</div>`:`<input id="tierCharacterSearch" placeholder="キャラ名・図鑑番号で検索" maxlength="70" autocomplete="off"><div id="tierSearchResults" class="shared-search-results"></div><div id="tierSelectedLabel" class="shared-selected">${item?`${sharedSafeImage(item)}${esc(item.name)}`:'キャラを選択してください'}</div>`}</div><div class="field"><label>ティア</label><select id="tierRank">${TIER_RANKS.map(t=>`<option value="${t}" ${t===rank?'selected':''}>${t}</option>`).join('')}</select></div><div class="field"><label>評価メモ（任意）</label><textarea id="tierNote" maxlength="300" rows="2" placeholder="評価理由など">${esc(note)}</textarea></div><div class="toolbar"><button class="primary" id="tierSave">共有ティア表に保存</button><button id="sharedCancel">キャンセル</button>${editing?'<button id="tierDelete" class="danger">ティアから除外</button>':''}</div><p class="muted" style="font-size:12px;margin-top:8px">編集内容はログイン利用者全員に公開され、ほかの利用者も変更できます。</p></section>`
+}
+function sharedTierSearchResults(){
+ const q=String($('#tierCharacterSearch')?.value||'').trim().normalize('NFKC').toLowerCase();const target=$('#tierSearchResults');if(!target)return;
+ if(!q){target.innerHTML='<span class="muted">名前か図鑑番号を入力すると候補が表示されます。</span>';return}
+ const found=sharedCatalog().filter(x=>String(x.name||'').normalize('NFKC').toLowerCase().includes(q)||String(x.dexNo||'').includes(q)).slice(0,24);
+ target.innerHTML=found.length?found.map(x=>`<button type="button" class="shared-result" data-tier-key="${esc(sharedKey(x))}">${sharedSafeImage(x)}<span class="shared-single-line">${esc(x.name)}<small> No.${esc(x.dexNo||'—')}　${esc(x.element||'未設定')}</small></span></button>`).join(''):'<span class="muted">一致するキャラがありません。</span>';
+ target.querySelectorAll('[data-tier-key]').forEach(b=>b.onclick=()=>{sharedSelectedKey=b.dataset.tierKey;const x=sharedCatalogEntry(sharedSelectedKey);$('#tierSelectedLabel').innerHTML=x?`${sharedSafeImage(x)}<strong>${esc(x.name)}</strong> / ${esc(x.element||'未設定')}`:'未選択';});
+}
+function communityTiers(v){
+ v.innerHTML=head('キャラクターティア表','Googleログイン利用者全員が閲覧・変更できる共有ティア表です。個人の所持キャラには影響しません。',`<button id="tierReload">↻ 更新</button>${cloudUser?'<button class="primary" id="tierAdd">＋ キャラをティアへ追加</button>':''}`)+
+ (cloudUser?'':sharedLoginHint())+(cloudUser?sharedIntro('tiers'):'')+
+ (cloudUser&&sharedLoaded.tiers?`<section class="panel"><div class="toolbar"><input id="tierFilter" placeholder="キャラ名で絞り込み" value="${esc(sharedFilter)}"></div><div class="shared-tier-grid">${TIER_RANKS.map(t=>{const rows=sharedTierEntries.filter(x=>x.tier===t&&x.character_name.includes(sharedFilter));return `<section class="shared-tier-lane"><div class="shared-tier-title shared-rank-${t}"><strong>${t}</strong><span>${rows.length}体</span></div><div class="shared-tier-cards">${rows.length?rows.map(x=>{const ch=sharedCatalogEntry(x.character_key)||x;return `<article class="shared-tier-card">${sharedSafeImage(ch)}<div class="shared-tier-data"><strong title="${esc(x.character_name)}">${esc(x.character_name)}</strong><span>${esc(ch.element||x.element||'未設定')}属性　No.${esc(x.dex_no||'—')}</span>${x.note?`<p class="shared-note">${esc(x.note)}</p>`:''}<small>更新 ${esc(sharedDate(x.updated_at))}</small></div><button data-tier-edit="${esc(x.id)}" class="shared-small-btn">編集</button></article>`}).join(''):'<div class="empty">未登録</div>'}</div></section>`}).join('')}</div><p class="muted" style="margin-top:12px">更新は約15秒ごとに取得します。編集が重なった場合は、保存をやり直す前に最新の一覧を確認してください。</p></section>`:'')+
+ (cloudUser&&sharedEditor==='tiers'?sharedTierForm():'');
+ if(!cloudUser)return;
+ $('#tierReload').onclick=()=>sharedRefresh('tiers');const retry=$('#communityRetry');if(retry)retry.onclick=()=>sharedRefresh('tiers');
+ const add=$('#tierAdd');if(add)add.onclick=()=>{sharedEditor='tiers';sharedEditingId=null;sharedSelectedKey='';render()};
+ const filter=$('#tierFilter');if(filter)filter.oninput=e=>{sharedFilter=e.target.value;const start=filter.selectionStart;render();const f=$('#tierFilter');if(f){f.focus();f.setSelectionRange(start,start)}};
+ v.querySelectorAll('[data-tier-edit]').forEach(b=>b.onclick=()=>{sharedEditingId=b.dataset.tierEdit;sharedSelectedKey='';sharedEditor='tiers';render()});
+ if(sharedEditor==='tiers'){
+   $('#sharedCancel').onclick=()=>{sharedEditor=null;sharedEditingId=null;render()};
+   const search=$('#tierCharacterSearch');if(search){search.oninput=sharedTierSearchResults;sharedTierSearchResults()}
+   $('#tierSave').onclick=sharedSaveTier;const tierDel=$('#tierDelete');if(tierDel)tierDel.onclick=sharedDeleteTier;
+ }
+ if(!sharedLoaded.tiers&&!sharedLoading.tiers&&!sharedErrors.tiers)queueMicrotask(()=>sharedLoad('tiers'));
+}
+async function sharedSaveTier(){
+ if(!cloudUser)return;
+ const old=sharedEditingId?sharedTierEntries.find(x=>x.id===sharedEditingId):null;
+ const selected=old?sharedCatalogEntry(old.character_key):sharedCatalogEntry(sharedSelectedKey);
+ if(!old&&!selected){alert('図鑑からキャラを選んでください。');return}
+ const rank=$('#tierRank').value,note=$('#tierNote').value.trim();if(!TIER_RANKS.includes(rank)||note.length>300)return;
+ const b=$('#tierSave');b.disabled=true;b.textContent='保存中…';
+ try{
+  if(old){const {data,error}=await supabaseClient.from(SHARED_TIER_TABLE).update({tier:rank,note}).eq('id',old.id).eq('updated_at',old.updated_at).select('id');if(error)throw error;if(!data?.length)throw Error('ほかの利用者が先に変更しました。')}
+  else{const row={character_key:sharedKey(selected),character_name:selected.name,dex_no:Number(selected.dexNo)||null,element:selected.element||'未設定',tier:rank,note};const {error}=await supabaseClient.from(SHARED_TIER_TABLE).insert(row);if(error)throw error}
+  sharedEditor=null;sharedEditingId=null;sharedSelectedKey='';toast('ティア表に保存しました');await sharedLoad('tiers');
+ }catch(e){sharedWriteFailure(e);b.disabled=false;b.textContent='共有ティア表に保存'}
+}
+async function sharedDeleteTier(){
+ const old=sharedTierEntries.find(x=>x.id===sharedEditingId);if(!old||!cloudUser)return;
+ if(!confirm(old.character_name+' を共有ティア表から除外します。全利用者に反映されます。よろしいですか？'))return;
+ const b=$('#tierDelete');b.disabled=true;
+ try{const {data,error}=await supabaseClient.from(SHARED_TIER_TABLE).delete().eq('id',old.id).eq('updated_at',old.updated_at).select('id');if(error)throw error;if(!data?.length)throw Error('ほかの利用者が先に変更しました。');sharedEditor=null;sharedEditingId=null;toast('共有ティア表から除外しました');await sharedLoad('tiers')}
+ catch(e){sharedWriteFailure(e);b.disabled=false}
+}
+function sharedQuestForm(){
+ const p=sharedEditingId?sharedQuestEntries.find(x=>x.id===sharedEditingId):null;
+ const selected=new Set(p?.gimmicks||[]);const known=PRED_GIMMICKS.filter(g=>selected.has(g));const other=[...selected].filter(g=>!PRED_GIMMICKS.includes(g)).join('、');
+ return `<section class="panel shared-edit"><h3>${p?'予想を編集':'クエスト予想を追加'}</h3><div class="form-grid"><div class="field"><label>クエスト名（必須）</label><input id="predName" maxlength="100" value="${esc(p?.name||'')}" placeholder="例：新黎絶（仮）"></div><div class="field"><label>カテゴリー</label><select id="predCategory">${QUEST_CATEGORIES.map(x=>`<option ${x===(p?.category||'高難易度')?'selected':''}>${esc(x)}</option>`).join('')}</select></div><div class="field"><label>予想する敵属性</label><select id="predElement">${['未発表','火','水','木','光','闇','複数'].map(x=>`<option ${x===(p?.element||'未発表')?'selected':''}>${x}</option>`).join('')}</select></div><div class="field"><label>予想状況</label><select id="predStatus">${['予想中','情報確認中','確定情報'].map(x=>`<option ${x===(p?.status||'予想中')?'selected':''}>${x}</option>`).join('')}</select></div><div class="field full"><label>予想ギミック（複数選択）</label><div class="shared-check-grid">${PRED_GIMMICKS.map(g=>`<label><input type="checkbox" class="pred-gimmick" value="${esc(g)}" ${known.includes(g)?'checked':''}>${esc(g)}</label>`).join('')}</div></div><div class="field full"><label>その他ギミック（任意・読点区切り）</label><input id="predOther" maxlength="200" placeholder="例：敵に触れると加速、特殊パネル" value="${esc(other)}"></div><div class="field full"><label>予想の根拠・メモ（任意）</label><textarea id="predNote" maxlength="1500" rows="4" placeholder="公式の告知からの考察、適正候補など">${esc(p?.note||'')}</textarea></div></div><div class="toolbar"><button id="predSave" class="primary">共有予想を保存</button><button id="sharedCancel">キャンセル</button>${p?'<button id="predDelete" class="danger">この予想を削除</button>':''}</div><p class="muted" style="margin-top:10px">予想は公式情報とは限りません。内容は全ログイン利用者が編集・削除できます。</p></section>`
+}
+function questPredictions(v){
+ v.innerHTML=head('クエストギミック予想','未実装・新登場クエストのギミック予想を、Googleログイン利用者全員で共有できます。',`<button id="predReload">↻ 更新</button>${cloudUser?'<button id="predAdd" class="primary">＋ クエスト予想を追加</button>':''}`)+
+ (cloudUser?'':sharedLoginHint())+(cloudUser?sharedIntro('quests'):'')+
+ (cloudUser&&sharedLoaded.quests?`<section class="panel"><div class="toolbar"><input id="predFilter" placeholder="クエスト名・ギミックで検索" value="${esc(sharedQuestFilter)}"></div><div class="shared-pred-list">${sharedQuestEntries.filter(x=>!sharedQuestFilter||[x.name,x.category,x.element,x.note,...(x.gimmicks||[])].join(' ').toLowerCase().includes(sharedQuestFilter.toLowerCase())).map(x=>`<article class="shared-pred-card"><div class="shared-pred-top"><div><strong>${esc(x.name)}</strong><div class="sub">${esc(x.category)}　｜　${esc(x.element)}属性　｜　${esc(x.status)}</div></div><button class="shared-small-btn" data-pred-edit="${esc(x.id)}">編集</button></div><div class="shared-tags">${(x.gimmicks||[]).length?(x.gimmicks||[]).map(g=>`<span>${esc(g)}</span>`).join(''):'<span>ギミック未設定</span>'}</div>${x.note?`<p class="shared-note">${esc(x.note)}</p>`:''}<small class="muted">最終更新：${esc(sharedDate(x.updated_at))}</small></article>`).join('')||'<div class="empty">まだ予想がありません。「＋ クエスト予想を追加」から登録できます。</div>'}</div></section>`:'')+
+ (cloudUser&&sharedEditor==='quests'?sharedQuestForm():'');
+ if(!cloudUser)return;
+ $('#predReload').onclick=()=>sharedRefresh('quests');const retry=$('#communityRetry');if(retry)retry.onclick=()=>sharedRefresh('quests');
+ const add=$('#predAdd');if(add)add.onclick=()=>{sharedEditingId=null;sharedEditor='quests';render()};
+ const filter=$('#predFilter');if(filter)filter.oninput=e=>{sharedQuestFilter=e.target.value;const start=filter.selectionStart;render();const f=$('#predFilter');if(f){f.focus();f.setSelectionRange(start,start)}};
+ v.querySelectorAll('[data-pred-edit]').forEach(b=>b.onclick=()=>{sharedEditingId=b.dataset.predEdit;sharedEditor='quests';render()});
+ if(sharedEditor==='quests'){$('#sharedCancel').onclick=()=>{sharedEditor=null;sharedEditingId=null;render()};$('#predSave').onclick=sharedSavePrediction;const del=$('#predDelete');if(del)del.onclick=sharedDeletePrediction}
+ if(!sharedLoaded.quests&&!sharedLoading.quests&&!sharedErrors.quests)queueMicrotask(()=>sharedLoad('quests'));
+}
+async function sharedSavePrediction(){
+ if(!cloudUser)return;
+ const old=sharedEditingId?sharedQuestEntries.find(x=>x.id===sharedEditingId):null;
+ const name=$('#predName').value.trim(),category=$('#predCategory').value,element=$('#predElement').value,status=$('#predStatus').value,note=$('#predNote').value.trim();
+ const selected=[...document.querySelectorAll('.pred-gimmick:checked')].map(x=>x.value);
+ const extra=$('#predOther').value.split(/[、,，\n]+/).map(x=>x.trim()).filter(Boolean);const gimmicks=[...new Set([...selected,...extra])].slice(0,40);
+ if(!name||name.length>100){alert('クエスト名を入力してください（100文字以内）。');return}
+ if(!QUEST_CATEGORIES.includes(category)||!['未発表','火','水','木','光','闇','複数'].includes(element)||!['予想中','情報確認中','確定情報'].includes(status)||note.length>1500||gimmicks.some(x=>x.length>60)){alert('入力内容を確認してください。');return}
+ const b=$('#predSave');b.disabled=true;b.textContent='保存中…';
+ try{
+  const payload={name,category,element,status,gimmicks,note};
+  if(old){const {data,error}=await supabaseClient.from(SHARED_QUEST_TABLE).update(payload).eq('id',old.id).eq('updated_at',old.updated_at).select('id');if(error)throw error;if(!data?.length)throw Error('ほかの利用者が先に変更しました。')}
+  else{const {error}=await supabaseClient.from(SHARED_QUEST_TABLE).insert(payload);if(error)throw error}
+  sharedEditor=null;sharedEditingId=null;toast('共有予想を保存しました');await sharedLoad('quests');
+ }catch(e){sharedWriteFailure(e);b.disabled=false;b.textContent='共有予想を保存'}
+}
+async function sharedDeletePrediction(){
+ const old=sharedQuestEntries.find(x=>x.id===sharedEditingId);if(!old||!cloudUser)return;
+ if(!confirm('このクエスト予想を共有データから削除します。全利用者の一覧から消えます。削除しますか？'))return;
+ const b=$('#predDelete');b.disabled=true;
+ try{const {data,error}=await supabaseClient.from(SHARED_QUEST_TABLE).delete().eq('id',old.id).eq('updated_at',old.updated_at).select('id');if(error)throw error;if(!data?.length)throw Error('ほかの利用者が先に変更しました。');sharedEditor=null;sharedEditingId=null;toast('共有予想を削除しました');await sharedLoad('quests')}
+ catch(e){sharedWriteFailure(e);b.disabled=false}
+}
+
 function dashboard(v,a){
  const perfected=a.characters.filter(c=>c.perfected).length, done=a.characters.filter(c=>c.luck>=99).length;
  const exTotal=(a.exTargets||[]).reduce((sum,x)=>sum+(Number(x.runs)||0),0);
