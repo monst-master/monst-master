@@ -107,6 +107,16 @@
 .dex-card .actions{grid-column:2;display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;margin-left:0;min-width:0}
 .dex-card .actions button{white-space:nowrap;max-width:100%}
 @media(max-width:620px){.dex-grid{grid-template-columns:minmax(0,1fr)}.dex-card{grid-template-columns:48px minmax(0,1fr)}.dex-card .actions{grid-column:2}}
+
+/* v41: わくわく厳選一覧では実アイコンを上、名称を下に横書きで表示 */
+#luckList .tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+#luckList table{min-width:1110px}
+#luckList th:nth-child(n+3):nth-child(-n+6),
+#luckList td:nth-child(n+3):nth-child(-n+6){min-width:136px;text-align:center;vertical-align:middle}
+#luckList .seed-display{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;max-width:none;min-width:118px;width:100%;white-space:nowrap;writing-mode:horizontal-tb}
+#luckList .seed-display .seed-grade-icon{display:block;width:36px;height:36px;object-fit:contain;flex:none}
+#luckList .seed-display span{display:block;white-space:nowrap;word-break:keep-all;overflow-wrap:normal;writing-mode:horizontal-tb;font-size:12px;line-height:1.5;text-align:center}
+@media(max-width:620px){#luckList table{min-width:1110px}#luckList .seed-display .seed-grade-icon{width:34px;height:34px}}
 </style></head>
 <body><div class="app">
 <header class="top"><div class="brand"><div class="logo">M</div><div><h1>MONST MASTER</h1><small>PLAYER DATA MANAGEMENT</small></div></div><div class="top-actions"><button id="exportBtn">↓ バックアップ</button><button id="importBtn">↑ 復元</button><input id="importFile" type="file" accept="application/json" class="hide"></div></header>
