@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MONST MASTER v30 Mobile Cloud Bottom</title>
+<title>MONST MASTER v32 Mobile Cloud Bottom</title>
 <style>
 :root{--bg:#080d18;--panel:#111b2c;--panel2:#17243a;--line:#263752;--txt:#eef4ff;--muted:#9aacc7;--blue:#59b8ff;--cyan:#62e4e8;--gold:#ffc96b;--red:#ff7384;--green:#6de0ae;--shadow:0 12px 34px #0005}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% -10%,#16365b 0,transparent 38%),radial-gradient(ellipse at 100% 0,#20264c 0,transparent 30%),var(--bg);color:var(--txt);font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid var(--line);background:#1a2a43;color:var(--txt);border-radius:10px;padding:9px 13px}button:hover{border-color:var(--blue);filter:brightness(1.12)}button.primary{background:linear-gradient(120deg,#167ac2,#3759bc);border:0}button.danger{color:#ff9aa5}input,select,textarea{width:100%;background:#0b1423;color:var(--txt);border:1px solid var(--line);border-radius:9px;padding:10px;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--blue)}textarea{min-height:76px;resize:vertical}.app{max-width:1440px;margin:auto;padding:22px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}.brand{display:flex;align-items:center;gap:13px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#3bd6e8,#3974d8 60%,#8d63dc);display:grid;place-items:center;color:#061323;font-weight:1000;font-size:20px;box-shadow:0 0 28px #43c8f766}.brand h1{font-size:20px;letter-spacing:2px;margin:0}.brand small{color:var(--muted);letter-spacing:2px}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.layout{display:grid;grid-template-columns:230px 1fr;gap:18px}.sidebar,.panel,.stat{background:linear-gradient(160deg,#142238ee,#0e1727f2);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.sidebar{padding:13px;height:max-content;position:sticky;top:14px}.account-label{font-size:11px;color:var(--muted);margin:4px 7px 7px}.nav{display:grid;gap:5px;margin-top:16px}.nav button{text-align:left;background:transparent;border-color:transparent;color:#bdcbe0}.nav button.active{background:#1b3656;border-color:#31577e;color:#fff}.nav button span{display:inline-block;width:27px;color:var(--cyan)}.content{min-width:0}.page-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:3px 0 16px}.page-head h2{margin:0;font-size:23px}.sub{color:var(--muted);font-size:12px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:15px}.stat{padding:16px}.stat .k{color:var(--muted);font-size:12px}.stat .v{font-size:27px;font-weight:800;margin-top:5px}.stat .v em{font-style:normal;font-size:12px;color:var(--muted);font-weight:500}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel{padding:17px;margin-bottom:14px}.panel h3{font-size:15px;margin:0 0 13px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.toolbar>*{max-width:230px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.field label{display:block;color:var(--muted);font-size:12px;margin:0 0 5px}.field.full{grid-column:1/-1}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:620px}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid #263752;font-size:13px}th{color:var(--muted);font-weight:600;white-space:nowrap}.empty{text-align:center;color:var(--muted);padding:28px}.pill{display:inline-block;padding:3px 8px;border-radius:99px;background:#203b59;color:#aee1ff;font-size:11px}.pill.gold{background:#49371c;color:#ffdc9a}.pill.green{background:#173d36;color:#9af0c8}.actions{display:flex;gap:6px}.actions button{padding:5px 8px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}.charcard{background:#0d1829;border:1px solid var(--line);border-radius:12px;padding:13px}.charcard strong{display:block;font-size:15px}.charcard small{color:var(--muted)}.charcard .bottom{display:flex;justify-content:space-between;align-items:center;margin-top:10px}.counter{display:flex;align-items:center;gap:10px}.counter strong{font-size:28px;min-width:45px;text-align:center}.counter button{font-size:18px;padding:5px 12px}.progress{height:8px;background:#263752;border-radius:20px;overflow:hidden;margin-top:10px}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan))}.muted{color:var(--muted)}.right{margin-left:auto}.hide{display:none!important}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1d3c55;border:1px solid #4d88b8;padding:10px 17px;border-radius:12px;box-shadow:var(--shadow);z-index:9}.modalback{position:fixed;inset:0;background:#0009;display:grid;place-items:center;padding:15px;z-index:10}.modal{width:min(620px,100%);max-height:90vh;overflow:auto;background:#111d30;border:1px solid #385071;border-radius:17px;padding:20px;box-shadow:var(--shadow)}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.modalhead h3{margin:0}.seedslot{padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1829}.footer{color:#7185a3;text-align:center;font-size:11px;margin:20px 0 5px}
@@ -88,23 +88,53 @@
 .app>.footer{order:3;flex:0 0 auto}
 @media(max-width:850px){.app>#cloudPanel{margin-top:20px!important}}
 @media(max-width:560px){.app>#cloudPanel{padding:15px;margin-top:18px!important}.app>#cloudPanel .toolbar{display:flex;flex-direction:column;align-items:stretch}.app>#cloudPanel .toolbar>button{width:100%;max-width:none;min-height:42px}}
+
+/* v32: 一括所持登録 / スクショ取り込み */
+.bulk-dex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;max-height:55vh;overflow:auto;padding:4px}
+.bulk-dex-item{border:1px solid #34506c;background:#102138;border-radius:11px;padding:7px;display:flex;align-items:center;gap:8px;cursor:pointer}
+.bulk-dex-item.on{border-color:#55d7a0;background:#143b37}
+.bulk-dex-item img{width:43px;height:43px;object-fit:contain;border-radius:6px}
+.bulk-dex-item span{font-size:12px;overflow-wrap:anywhere}
+.bulk-dex-item input{width:16px;flex-shrink:0}
+.shot-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:9px;max-height:48vh;overflow:auto}
+.shot-card{border:1px solid #34506c;border-radius:12px;padding:9px;display:flex;align-items:center;gap:8px;background:#101c2f}
+.shot-card img{width:60px;height:60px;object-fit:contain;border-radius:8px}
+.shot-card input{min-width:0;font-size:12px}
+.shot-card .selected-name{font-size:12px;color:#a6eacb}
+.shot-preview{max-width:100%;max-height:200px;object-fit:contain;border:1px solid #34506c;border-radius:9px}
+.shot-params{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.shot-params label{font-size:11px;color:#aabbd0}
+.shot-params input{margin-top:4px}
+@media(max-width:530px){.shot-params{grid-template-columns:repeat(2,minmax(0,1fr))}.bulk-dex-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style></head>
 <body><div class="app">
 <header class="top"><div class="brand"><div class="logo">M</div><div><h1>MONST MASTER</h1><small>PLAYER DATA MANAGEMENT</small></div></div><div class="top-actions"><button id="exportBtn">↓ バックアップ</button><button id="importBtn">↑ 復元</button><input id="importFile" type="file" accept="application/json" class="hide"></div></header>
 <div class="layout"><aside class="sidebar"><div class="account-label">管理中のアカウントを切り替え</div><select id="accountSelect" aria-label="管理するアカウント"></select><div class="toolbar" style="margin:9px 0 0"><button class="primary" id="addAccount">＋ アカウント追加</button><button id="renameAccount">名前変更</button></div><nav class="nav" id="nav"><button class="active" data-page="dashboard"><span>⌂</span>ダッシュボード</button><button data-page="characters"><span>♙</span>所持キャラ</button><button data-page="gachaDex"><span>▦</span>キャラ図鑑</button><button data-page="luck"><span>✦</span>わくわく厳選</button><button data-page="quests"><span>⚔</span>クエスト編成</button><button data-page="ex"><span>◇</span>EX周回カウンター</button><button data-page="calculators"><span>∑</span>計算ツール</button><button data-page="settings"><span>⚙</span>データ管理</button></nav></aside>
-<main class="content" id="view"></main></div><section class="panel" id="cloudPanel" style="margin:20px 0 16px;border-color:#3974a8">
+<main class="content" id="view"></main></div><section class="panel" id="usagePanel" style="margin:0 0 16px">
+<h3>📊 匿名の利用状況集計</h3>
+<p class="muted">改善のため、同意された場合のみ匿名の端末ID・利用日・開いた機能名を送信します。所持キャラ、厳選、アカウント名、Googleメールアドレスは送信しません。オフにすると送信を停止します。</p>
+<label style="display:flex;gap:9px;align-items:center"><input type="checkbox" id="usageConsent" style="width:auto">匿名の利用状況集計に協力する</label>
+<p class="muted" id="usageStatus" style="font-size:11px;margin-top:7px">未同意（送信なし）</p>
+<div id="developerAnalytics" class="hide" style="margin-top:15px;border-top:1px solid var(--line);padding-top:14px">
+<h3>🔒 開発者専用・利用状況</h3>
+<button class="primary" id="analyticsRefresh">統計を更新</button>
+<div id="analyticsResults" class="muted" style="margin-top:12px">開発者認証済み。統計を読み込めます。</div>
+</div>
+</section>
+<section class="panel" id="cloudPanel" style="margin:20px 0 16px;border-color:#3974a8">
 <h3>☁ Googleログイン・クラウド同期</h3>
-<p class="muted" id="cloudStatus">接続を準備しています…</p>
+<p class="muted" style="font-size:12px">Googleログイン中は変更を約1秒後に自動保存し、他端末は約12秒ごとに更新を確認します。初回はバックアップしてから同期元を選んでください。端末間で同時編集した場合は、安全のため同期を停止します。</p><p class="muted" id="cloudStatus">接続を準備しています…</p>
 <div class="toolbar" style="margin-bottom:0">
 <button class="primary" id="googleLoginBtn">Googleでログイン</button>
 <button id="googleLogoutBtn" class="hide">ログアウト</button>
 <button id="cloudCheckBtn" disabled>クラウド状態を確認</button>
-<button id="cloudUploadBtn" disabled>この端末のデータをクラウドへ保存</button>
-<button id="cloudDownloadBtn" disabled>クラウドのデータでこの端末を置き換える</button>
+<button id="cloudUploadBtn" disabled>端末データをクラウドへ保存（初回移行・復旧用）</button>
+<button id="cloudDownloadBtn" disabled>クラウドから復元（初回移行・復旧用）</button>
 </div>
 <p class="muted" style="font-size:11px;margin:10px 0 0">初回移行は手動操作です。先に「↓バックアップ」でJSONを保存してください。自動上書き・自動同期は行いません。</p>
 </section>
-<div class="footer">MONST MASTER v30 · データはこのブラウザ内にも保存されます。クラウド同期前にJSONバックアップを作成してください。</div></div><div id="modalRoot"></div><div id="toastRoot"></div>
+
+<div class="footer">MONST MASTER v31 · データはこのブラウザ内にも保存されます。クラウド同期前にJSONバックアップを作成してください。</div></div><div id="modalRoot"></div><div id="toastRoot"></div>
 
 <script>
 (function(){
@@ -126,6 +156,11 @@ const SUPABASE_URL='https://cvlmffitwzfcidadjtqh.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY='sb_publishable_p0hUUf7xQ5qCPT3CitUCKw_YxAqGwVY';
 const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
 let cloudUser=null,cloudRowExists=false;
+let autoSyncReady=false,autoSyncBusy=false,autoSyncTimer=null,autoSyncPoll=null,autoSyncDirty=false,autoSyncTimestamp=null,autoSyncUserId=null,autoSyncGeneration=0;
+let autoSyncAppliedSnapshot='';
+const USAGE_CONSENT_KEY='monst_master_usage_consent_v1';
+const USAGE_INSTALL_KEY='monst_master_usage_install_v1';
+let usageAdmin=false;
 const KEY='monst_master_fresh_v1';
 const $=s=>document.querySelector(s);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const blank=(name='メイン')=>({id:crypto.randomUUID(),name,rank:'',luckCount:0,characters:[],quests:[],exRuns:[],exTargets:[]});
@@ -161,36 +196,147 @@ DESCENT_SEED.forEach(x=>{const found=state.gachaDex.find(d=>Number(d.dexNo)===x.
 state.gachaDex=state.gachaDex.map(x=>{const seed=dexSeedMap.get(dexKey(x));return {...x,dexNo:x.dexNo||seed?.dexNo||null,category:x.category||'恒常キャラ',element:x.element||'未設定'};});
 state.accounts.forEach(a=>{a.exRuns=a.exRuns||[];if(!Array.isArray(a.exTargets)){const grouped={};a.exRuns.forEach(x=>{const n=x.name||'名称未設定';if(!grouped[n])grouped[n]={id:crypto.randomUUID(),name:n,runs:0,encounters:0,wins:0,losses:0,drops:0};grouped[n].runs+=Number(x.count)||0;grouped[n].encounters+=Number(x.encounters)||0;grouped[n].wins+=Number(x.wins)||0});a.exTargets=Object.values(grouped)} });
 function load(){try{let x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.accounts)&&x.accounts.length)return x}catch(e){}return {accounts:[blank()],active:null}}
-function save(){localStorage.setItem(KEY,JSON.stringify(state));render()}
+function save(){localStorage.setItem(KEY,JSON.stringify(state));markAutoSyncDirty();render()}
 function acct(){return state.accounts.find(a=>a.id===state.active)||state.accounts[0]}
 function cloudMessage(message){const el=$('#cloudStatus');if(el)el.textContent=message}
 function setCloudButtons(){const signed=!!cloudUser;$('#googleLoginBtn').classList.toggle('hide',signed);$('#googleLogoutBtn').classList.toggle('hide',!signed);$('#cloudCheckBtn').disabled=!signed;$('#cloudUploadBtn').disabled=!signed;$('#cloudDownloadBtn').disabled=!signed||!cloudRowExists}
-async function refreshCloudState(){if(!cloudUser){cloudRowExists=false;cloudMessage('未ログインです。Googleでログインしてください。');setCloudButtons();return}
- const {data,error}=await supabaseClient.from('user_data').select('updated_at').eq('user_id',cloudUser.id).maybeSingle();
- if(error){cloudMessage('クラウド確認エラー：'+error.message);return}
- cloudRowExists=!!data;cloudMessage(cloudRowExists?'ログイン中：'+cloudUser.email+' ／ クラウドデータあり（更新：'+new Date(data.updated_at).toLocaleString('ja-JP')+'）':'ログイン中：'+cloudUser.email+' ／ クラウドデータなし。初回保存できます。');setCloudButtons()}
+function syncSnapshot(x){return JSON.stringify(x)}
+function validCloudData(d){return d&&Array.isArray(d.accounts)&&d.accounts.length>0}
+function hasLocalWork(d){if(!validCloudData(d))return false;return d.accounts.some(a=>(a.characters||[]).length||(a.quests||[]).length||(a.exTargets||[]).length||(a.exRuns||[]).length||(a.rank&&Number(a.rank)>0)||Number(a.luckCount)>0)||!!(d.dexMarkedUnowned||[]).length}
+function applyRemoteState(d){
+ if(!validCloudData(d))return false;
+ state={...d,accounts:d.accounts.map(a=>({...blank(a.name),...a,characters:a.characters||[],quests:a.quests||[],exRuns:a.exRuns||[],exTargets:a.exTargets||[]})),gachaDex:Array.isArray(d.gachaDex)?d.gachaDex:state.gachaDex,dexMarkedUnowned:Array.isArray(d.dexMarkedUnowned)?d.dexMarkedUnowned:[],active:d.active&&d.accounts.some(a=>a.id===d.active)?d.active:d.accounts[0].id};
+ localStorage.setItem(KEY,JSON.stringify(state));autoSyncDirty=false;autoSyncAppliedSnapshot=syncSnapshot(state);render();return true;
+}
+function markAutoSyncDirty(){if(!cloudUser||!autoSyncReady)return;autoSyncDirty=true;cloudMessage('変更を自動保存しています…');clearTimeout(autoSyncTimer);autoSyncTimer=setTimeout(()=>flushAutoSync(),1000)}
+async function getCloudRow(){return await supabaseClient.from('user_data').select('data,updated_at').eq('user_id',cloudUser.id).maybeSingle()}
+function pauseAutoSync(message){autoSyncReady=false;autoSyncDirty=false;clearTimeout(autoSyncTimer);cloudMessage(message)}
+async function initAutoSync(){
+ if(!cloudUser)return;
+ const thisUser=cloudUser.id; const run=++autoSyncGeneration;autoSyncReady=false;autoSyncDirty=false;clearTimeout(autoSyncTimer);
+ cloudMessage('Googleアカウントのデータを確認中…');
+ const {data:remote,error}=await getCloudRow();if(run!==autoSyncGeneration||cloudUser?.id!==thisUser)return;
+ if(error){cloudMessage('自動同期に接続できません：'+error.message);return}
+ cloudRowExists=!!remote;autoSyncTimestamp=remote?.updated_at||null;setCloudButtons();
+ if(remote&&validCloudData(remote.data)){
+  if(hasLocalWork(state)&&syncSnapshot(state)!==syncSnapshot(remote.data)){
+   // Never silently destroy existing local work on first login.
+   const useCloud=confirm('このGoogleアカウントには保存済みデータがあります。\n\nOK：Googleのデータをこの端末へ読み込む（推奨）\nキャンセル：自動同期を開始せず、端末内データを保持する\n\nデータを移したい場合は先にJSONバックアップを取ってから、下部の「端末データをクラウドへ保存」を利用してください。');
+   if(!useCloud){pauseAutoSync('自動同期は一時停止中です。端末データは保護されています。バックアップしてから同期方法を選んでください。');return}
+  }
+  applyRemoteState(remote.data);
+ }else if(remote){pauseAutoSync('クラウドの保存形式に問題があります。自動で上書きせず停止しました。');return}
+ autoSyncReady=true;autoSyncUserId=thisUser;autoSyncAppliedSnapshot=syncSnapshot(state);
+ if(!remote){if(hasLocalWork(state)&&!confirm('このGoogleアカウントにはまだデータがありません。\nこの端末の既存データを最初のクラウドデータとして登録しますか？\n\nOK：端末データをクラウドに保存（推奨）\nキャンセル：同期を一時停止してバックアップを確認')){pauseAutoSync('クラウドへの初回保存を保留しました。端末データは保持しています。');return}autoSyncDirty=true;await flushAutoSync();}
+ cloudMessage('Googleアカウントに自動同期中 ✓（変更後に自動保存・他端末にも反映）');
+ if(autoSyncPoll)clearInterval(autoSyncPoll);
+ autoSyncPoll=setInterval(pollAutoSync,12000);
+}
+async function flushAutoSync(){
+ if(!autoSyncReady||!cloudUser||autoSyncBusy||!autoSyncDirty)return;
+ autoSyncBusy=true;const user=cloudUser.id,startedAt=autoSyncGeneration;
+ const snapshot=syncSnapshot(state);const timestamp=new Date().toISOString();
+ try{
+  let req;
+  if(autoSyncTimestamp){req=await supabaseClient.from('user_data').update({data:JSON.parse(snapshot),updated_at:timestamp}).eq('user_id',user).eq('updated_at',autoSyncTimestamp).select('updated_at');}
+  else {req=await supabaseClient.from('user_data').insert({user_id:user,data:JSON.parse(snapshot),updated_at:timestamp}).select('updated_at');}
+  if(startedAt!==autoSyncGeneration||cloudUser?.id!==user)return;
+  if(req.error){
+   // A duplicate key or stale timestamp can indicate another device changed the row.
+   autoSyncDirty=true;pauseAutoSync('同期競合または通信エラーで保存を停止しました。データはこの端末に残っています。「クラウド状態を確認」で確認してください。詳細：'+req.error.message);return;
+  }
+  if(!req.data?.length){autoSyncDirty=true;pauseAutoSync('別端末の更新と競合しました。上書きせず同期を停止しました。端末のバックアップを保存し、同期方法を選んでください。');return}
+  autoSyncTimestamp=req.data[0].updated_at;cloudRowExists=true;
+  autoSyncAppliedSnapshot=snapshot;
+  autoSyncDirty=syncSnapshot(state)!==snapshot;
+  cloudMessage(autoSyncDirty?'続きの変更を同期中…':'Googleアカウントに保存済み ✓（他端末と同期中）');
+ }catch(err){autoSyncDirty=true;pauseAutoSync('通信エラーで同期を停止しました。端末データは保持されています。'+err.message)}
+ finally{autoSyncBusy=false;if(autoSyncDirty&&autoSyncReady){clearTimeout(autoSyncTimer);autoSyncTimer=setTimeout(flushAutoSync,900)}}
+}
+async function pollAutoSync(){
+ if(!autoSyncReady||!cloudUser||autoSyncBusy||autoSyncDirty)return;
+ const thisUser=cloudUser.id,run=autoSyncGeneration;
+ try{
+  const {data,error}=await getCloudRow();if(error||run!==autoSyncGeneration||thisUser!==cloudUser?.id||!autoSyncReady)return;
+  if(!data){pauseAutoSync('クラウドデータを見つけられないため同期を停止しました。');return}
+  if(data.updated_at===autoSyncTimestamp)return;
+  if(syncSnapshot(state)!==autoSyncAppliedSnapshot){pauseAutoSync('この端末に未同期の変更があるため、別端末データで上書きしませんでした。バックアップしてから確認してください。');return}
+  if(!validCloudData(data.data)){pauseAutoSync('クラウドデータが不正のため、端末には反映しませんでした。');return}
+  autoSyncTimestamp=data.updated_at;applyRemoteState(data.data);cloudMessage('別端末の更新を自動反映しました ✓');
+ }catch(err){cloudMessage('他端末の更新確認に失敗しました。次回再試行します。')}
+}
+async function refreshCloudState(){if(!cloudUser){cloudRowExists=false;cloudMessage('未ログインです。Googleでログインすると自動同期できます。');setCloudButtons();return}
+ const {data,error}=await getCloudRow();if(error){cloudMessage('確認エラー：'+error.message);return}
+ cloudRowExists=!!data;setCloudButtons();
+ if(!autoSyncReady){cloudMessage('ログイン中：'+cloudUser.email+' ／ 同期一時停止中。JSONバックアップ後、保存元を選択してください。');return}
+ await pollAutoSync();cloudMessage('ログイン中：'+cloudUser.email+' ／ 自動同期有効 ✓');}
 async function cloudLogin(){const {error}=await supabaseClient.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.href.split('#')[0]}});if(error)cloudMessage('ログイン開始エラー：'+error.message)}
-async function cloudLogout(){const {error}=await supabaseClient.auth.signOut();if(error){cloudMessage('ログアウトエラー：'+error.message);return}cloudUser=null;cloudRowExists=false;setCloudButtons();cloudMessage('ログアウトしました。端末内のデータはそのまま残っています。')}
-async function cloudUpload(){if(!cloudUser)return;const backupName='monst-master-before-cloud-'+new Date().toISOString().slice(0,10)+'.json';
- if(!confirm('安全確認：先に画面上部の「↓バックアップ」でJSONを保存しましたか？\n\n保存済みの場合のみOKを押してください。'))return;
- const {data:existing,error:readError}=await supabaseClient.from('user_data').select('user_id,updated_at').eq('user_id',cloudUser.id).maybeSingle();
- if(readError){cloudMessage('クラウド確認エラー：'+readError.message);return}
- if(existing&&!confirm('クラウドには既存データがあります。今回の端末データでクラウドを上書きします。\nクラウド側の内容は失われます。続行しますか？'))return;
- const payload={user_id:cloudUser.id,data:state,updated_at:new Date().toISOString()};
- const {error}=await supabaseClient.from('user_data').upsert(payload,{onConflict:'user_id'});
- if(error){cloudMessage('保存エラー：'+error.message);return}cloudRowExists=true;cloudMessage('保存完了：この端末の全データをクラウドへ保存しました。');setCloudButtons()}
-async function cloudDownload(){if(!cloudUser||!cloudRowExists)return;
- if(!confirm('安全確認：現在の端末データを先にJSONバックアップしましたか？\n\nクラウドのデータで、この端末のデータを置き換えます。続行しますか？'))return;
- const {data,error}=await supabaseClient.from('user_data').select('data,updated_at').eq('user_id',cloudUser.id).single();
- if(error){cloudMessage('読み込みエラー：'+error.message);return}
- const d=data?.data;if(!d||!Array.isArray(d.accounts)||!d.accounts.length){cloudMessage('クラウドデータの形式が不正です。端末データは変更していません。');return}
- state={...d,accounts:d.accounts.map(a=>({...blank(a.name),...a,characters:a.characters||[],quests:a.quests||[],exRuns:a.exRuns||[],exTargets:a.exTargets||[]})),gachaDex:Array.isArray(d.gachaDex)?d.gachaDex:[],dexMarkedUnowned:Array.isArray(d.dexMarkedUnowned)?d.dexMarkedUnowned:[],active:d.active&&d.accounts.some(a=>a.id===d.active)?d.active:d.accounts[0].id};
- localStorage.setItem(KEY,JSON.stringify(state));render();cloudMessage('読み込み完了：クラウドデータをこの端末に反映しました。');}
-async function initCloud(){if(!window.supabase){cloudMessage('Supabaseライブラリを読み込めませんでした。インターネット接続を確認してください。');return}
+async function cloudLogout(){clearTimeout(autoSyncTimer);if(autoSyncPoll)clearInterval(autoSyncPoll);++autoSyncGeneration;autoSyncReady=false;
+ const {error}=await supabaseClient.auth.signOut();if(error){cloudMessage('ログアウトエラー：'+error.message);return}cloudUser=null;cloudRowExists=false;setCloudButtons();cloudMessage('ログアウトしました。端末のデータは維持されます。')}
+async function cloudUpload(){if(!cloudUser)return;
+ if(!confirm('この端末の全データをGoogleアカウント側に保存します。\n\n先にJSONバックアップを保存してください。すでにクラウドにあるデータを置き換えてもよろしいですか？'))return;
+ const {data:remote,error}=await getCloudRow();if(error){cloudMessage('クラウド確認エラー：'+error.message);return}
+ if(remote&&!confirm('確認：クラウドには既存データがあります。この端末のデータで置き換えますか？'))return;
+ clearTimeout(autoSyncTimer);autoSyncReady=false;autoSyncDirty=false;
+ const timestamp=new Date().toISOString(),snapshot=syncSnapshot(state);
+ let req;if(remote){req=await supabaseClient.from('user_data').update({data:state,updated_at:timestamp}).eq('user_id',cloudUser.id).eq('updated_at',remote.updated_at).select('updated_at')}
+ else{req=await supabaseClient.from('user_data').insert({user_id:cloudUser.id,data:state,updated_at:timestamp}).select('updated_at')}
+ if(req.error||!req.data?.length){cloudMessage('保存できませんでした。競合の可能性があります。'+(req.error?.message||''));return}
+ autoSyncTimestamp=req.data[0].updated_at;cloudRowExists=true;autoSyncAppliedSnapshot=snapshot;autoSyncReady=true;autoSyncUserId=cloudUser.id;
+ if(autoSyncPoll)clearInterval(autoSyncPoll);autoSyncPoll=setInterval(pollAutoSync,12000);
+ cloudMessage('端末データを保存しました。以後は自動同期します ✓');setCloudButtons();}
+async function cloudDownload(){if(!cloudUser)return;
+ if(!confirm('クラウドに保存された全データをこの端末へ読み込みます。\n\n先にJSONバックアップを保存してください。続行しますか？'))return;
+ const {data,error}=await getCloudRow();if(error||!data||!validCloudData(data.data)){cloudMessage('クラウドデータの読み込みに失敗しました。');return}
+ clearTimeout(autoSyncTimer);autoSyncReady=false;autoSyncTimestamp=data.updated_at;cloudRowExists=true;
+ applyRemoteState(data.data);autoSyncReady=true;autoSyncUserId=cloudUser.id;
+ if(autoSyncPoll)clearInterval(autoSyncPoll);autoSyncPoll=setInterval(pollAutoSync,12000);
+ cloudMessage('クラウドデータを反映しました。以後は自動同期します ✓');setCloudButtons();}
+async function initCloud(){if(!window.supabase){cloudMessage('Supabaseを読み込めません。ネット接続を確認してください。');return}
  $('#googleLoginBtn').onclick=cloudLogin;$('#googleLogoutBtn').onclick=cloudLogout;$('#cloudCheckBtn').onclick=refreshCloudState;$('#cloudUploadBtn').onclick=cloudUpload;$('#cloudDownloadBtn').onclick=cloudDownload;
- const {data:{session}}=await supabaseClient.auth.getSession();cloudUser=session?.user||null;await refreshCloudState();
- supabaseClient.auth.onAuthStateChange((_event,session)=>{cloudUser=session?.user||null;setCloudButtons();refreshCloudState()});}
-function init(){if(!state.active)state.active=state.accounts[0].id;$('#accountSelect').innerHTML=state.accounts.map(a=>`<option value="${a.id}">${esc(a.name)}</option>`).join('');$('#accountSelect').value=acct().id;$('#accountSelect').onchange=e=>{state.active=e.target.value;save()};$('#nav').addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(!b)return;page=b.dataset.page;render()});$('#addAccount').onclick=()=>{let n=prompt('新しいアカウント名（例：サブ2）');if(!n?.trim())return;let a=blank(n.trim());state.accounts.push(a);state.active=a.id;save();toast('アカウントを追加しました')};$('#renameAccount').onclick=()=>{let n=prompt('アカウント名',acct().name);if(n?.trim()){acct().name=n.trim();save()}};$('#exportBtn').onclick=exportData;$('#importBtn').onclick=()=>$('#importFile').click();$('#importFile').onchange=importData;render();initCloud()}
+ const {data:{session}}=await supabaseClient.auth.getSession();cloudUser=session?.user||null;setCloudButtons();if(cloudUser)await initAutoSync();else cloudMessage('Googleログインで他端末との自動同期を開始できます。');
+ supabaseClient.auth.onAuthStateChange((event,session)=>{const next=session?.user||null;const changed=next?.id!==cloudUser?.id;cloudUser=next;setCloudButtons();if(changed){if(autoSyncPoll)clearInterval(autoSyncPoll);clearTimeout(autoSyncTimer);++autoSyncGeneration;autoSyncReady=false;if(next)setTimeout(initAutoSync,0);else cloudMessage('未ログインです。')}refreshUsageAdmin()});await refreshUsageAdmin();}
+// 匿名利用状況: 同意された端末のみ統計イベントを送信（個人データは送信しない）。
+function usageConsent(){return localStorage.getItem(USAGE_CONSENT_KEY)==='yes'}
+function getUsageInstallId(){let id=localStorage.getItem(USAGE_INSTALL_KEY);if(!id){id=crypto.randomUUID();localStorage.setItem(USAGE_INSTALL_KEY,id)}return id}
+async function trackUsage(eventType,feature=''){
+ if(!usageConsent())return;
+ if(eventType!=='visit'&&eventType!=='feature')return;
+ if(eventType==='feature'&&!['dashboard','characters','gachaDex','luck','quests','ex','calculators','settings'].includes(feature))return;
+ try{const {error}=await supabaseClient.rpc('mm_record_usage',{p_install_id:getUsageInstallId(),p_event_type:eventType,p_feature:feature||null});
+  if(error)console.warn('利用状況送信は利用できません:',error.message);
+ }catch(e){console.warn('利用状況送信に失敗しました')}
+}
+function initUsage(){
+ const control=$('#usageConsent'),status=$('#usageStatus');
+ control.checked=usageConsent();
+ status.textContent=control.checked?'匿名集計への協力が有効です':'未同意（送信なし）';
+ control.addEventListener('change',()=>{
+  localStorage.setItem(USAGE_CONSENT_KEY,control.checked?'yes':'no');
+  status.textContent=control.checked?'匿名集計への協力が有効です':'未同意（送信なし）';
+  if(control.checked){trackUsage('visit');trackUsage('feature',page)}
+ });
+ $('#analyticsRefresh').onclick=showUsageAnalytics;
+ if(usageConsent()){trackUsage('visit');trackUsage('feature',page)}
+}
+async function refreshUsageAdmin(){
+ const box=$('#developerAnalytics');usageAdmin=false;box.classList.add('hide');
+ if(!cloudUser)return;
+ try{const {data,error}=await supabaseClient.rpc('mm_get_usage_stats');
+  if(!error&&data&&data.is_admin===true){usageAdmin=true;box.classList.remove('hide');renderUsageStats(data)}
+ }catch(e){}
+}
+function renderUsageStats(data){
+ const target=$('#analyticsResults');if(!target)return;
+ if(!data||data.is_admin!==true){target.textContent='統計を取得できません。管理者認証を確認してください。';return}
+ const n=v=>Math.max(0,Number(v)||0).toLocaleString('ja-JP');
+ const ratio=Number(data.mau)>0?(100*(Number(data.dau)||0)/Number(data.mau)).toFixed(1):'0.0';
+ const days=(data.days||[]).map(x=>`<tr><td>${esc(x.day)}</td><td>${n(x.users)}端末</td><td>${n(x.visits)}件</td></tr>`).join('');
+ const features=(data.features||[]).map(x=>`<tr><td>${esc(x.feature)}</td><td>${n(x.users)}端末</td></tr>`).join('');
+ target.innerHTML=`<div class="stats" style="grid-template-columns:repeat(2,minmax(0,1fr))">${stat('今日の利用端末（DAU）',n(data.dau),'')}${stat('過去30日の利用端末（MAU）',n(data.mau),'')}${stat('DAU/MAU',ratio,'%')}${stat('今日の利用イベント',n(data.today_events),'件')}</div><p class="muted">日ごと・機能ごとの端末概算値です。計測に同意したブラウザのみを集計します。期間はUTC基準で、同一人物の複数端末は別々に数えます。</p><h4>直近14日の日別利用</h4><div class="tablewrap"><table><thead><tr><th>日付（UTC）</th><th>端末数</th><th>イベント数</th></tr></thead><tbody>${days||'<tr><td colspan="3">データなし</td></tr>'}</tbody></table></div><h4>過去30日の機能別利用端末数</h4><div class="tablewrap"><table><thead><tr><th>機能</th><th>端末数</th></tr></thead><tbody>${features||'<tr><td colspan="2">データなし</td></tr>'}</tbody></table></div>`;
+}
+async function showUsageAnalytics(){const el=$('#analyticsResults');el.textContent='統計を取得中…';const {data,error}=await supabaseClient.rpc('mm_get_usage_stats');if(error){el.textContent='取得エラー：'+error.message;return}renderUsageStats(data)}
+function init(){if(!state.active)state.active=state.accounts[0].id;$('#accountSelect').innerHTML=state.accounts.map(a=>`<option value="${a.id}">${esc(a.name)}</option>`).join('');$('#accountSelect').value=acct().id;$('#accountSelect').onchange=e=>{state.active=e.target.value;save()};$('#nav').addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(!b)return;page=b.dataset.page;render();trackUsage('feature',page)});$('#addAccount').onclick=()=>{let n=prompt('新しいアカウント名（例：サブ2）');if(!n?.trim())return;let a=blank(n.trim());state.accounts.push(a);state.active=a.id;save();toast('アカウントを追加しました')};$('#renameAccount').onclick=()=>{let n=prompt('アカウント名',acct().name);if(n?.trim()){acct().name=n.trim();save()}};$('#exportBtn').onclick=exportData;$('#importBtn').onclick=()=>$('#importFile').click();$('#importFile').onchange=importData;render();initUsage();initCloud()}
 function toast(t){$('#toastRoot').innerHTML=`<div class="toast">${esc(t)}</div>`;setTimeout(()=>$('#toastRoot').innerHTML='',2200)}
 function head(title,sub,action=''){return `<div class="page-head"><div><h2>${title}</h2><div class="sub">${sub}</div></div>${action}</div>`}
 function stat(label,value,unit=''){return `<div class="stat"><div class="k">${label}</div><div class="v">${value}<em> ${unit}</em></div></div>`}
@@ -297,7 +443,7 @@ function bindCollectionControls(a,key,list){
  for(const [id,k] of [['collectionSort','sort'],['collectionGroupBy','groupBy'],['collectionGroupFilter','groupFilter']]){
   $('#'+id).addEventListener('change',e=>{
    pref[k]=e.target.value;
-   localStorage.setItem(KEY,JSON.stringify(state));
+   localStorage.setItem(KEY,JSON.stringify(state));markAutoSyncDirty();
    list();
   });
  }
@@ -371,9 +517,23 @@ function collectionMoveControls(c,visibleIds,index,show){
  return show?`<div class="collection-manual"><button title="上へ移動" aria-label="上へ移動" data-move="-1" data-move-id="${esc(c.id)}" ${index===0?'disabled':''}>↑</button><button title="下へ移動" aria-label="下へ移動" data-move="1" data-move-id="${esc(c.id)}" ${index===visibleIds.length-1?'disabled':''}>↓</button></div>`:'';
 }
 
+
+// v32 所持データは本体の既存保存形式に合わせて追加。重複と旧記録を保持する。
+function bulkHasCharacter(a,d){return (a.characters||[]).some(c=>c.dexId?String(c.dexId)===String(d.id):Number(c.dexNo)>0?Number(c.dexNo)===Number(d.dexNo):dexNormalizedName(c.name)===dexNormalizedName(d.name))}
+function bulkAddCharacters(a,ids){let count=0,skip=0;ensureCollectionPrefs(a);for(const id of ids){const d=state.gachaDex.find(x=>String(x.id)===String(id));if(!d){skip++;continue}if(bulkHasCharacter(a,d)){skip++;continue}a.characters.push({id:crypto.randomUUID(),dexId:d.id,dexNo:d.dexNo||null,name:d.name,element:d.element&&d.element!=='未設定'?d.element:'',form:'',rarity:'',luck:1,perfected:false,memo:'',collectionGroupId:'',seeds:[],seedDetails:[],book:false,battleBook:false,levelBook:false,emblem:''});state.dexMarkedUnowned=(state.dexMarkedUnowned||[]).filter(k=>k!==dexOwnershipKey(d));count++}if(count)save();return {count,skip}}
+function bulkDexModal(a){let selected=new Set(),filter='',category='',onlyNew=true;const cats=[...new Set(state.gachaDex.map(d=>d.category).filter(Boolean))].sort();const shell=document.createElement('div');shell.className='modalback';shell.style.zIndex='20';shell.innerHTML=`<div class="modal" style="width:min(970px,100%)"><div class="modalhead"><h3>図鑑からまとめて所持登録</h3><button id="bulkClose">✕</button></div><div class="toolbar"><input id="bulkSearch" placeholder="キャラ名・図鑑番号で検索" style="max-width:270px"><select id="bulkCategory"><option value="">全カテゴリー</option>${cats.map(x=>`<option>${esc(x)}</option>`).join('')}</select><label style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="bulkOnlyNew" checked style="width:auto">未登録だけ</label></div><div id="bulkCount" class="sub" style="margin-bottom:8px"></div><div id="bulkItems" class="bulk-dex-grid"></div><div class="toolbar" style="margin-top:10px"><button id="bulkSelectVisible">表示中をすべて選択</button><button id="bulkClear">選択解除</button><button id="bulkCommit" class="primary">選択キャラを一括登録</button></div><p class="sub">各キャラはラック1で追加します。既存の所持・厳選データは上書きしません。</p></div>`;document.body.appendChild(shell);const $b=id=>shell.querySelector('#'+id);let visible=[];function draw(){visible=state.gachaDex.filter(d=>(!filter||dexNormalizedName(d.name).includes(filter)||String(d.dexNo||'').includes(filter))&&(!category||d.category===category)&&(!onlyNew||!bulkHasCharacter(a,d))).sort((x,y)=>(Number(x.dexNo)||1e9)-(Number(y.dexNo)||1e9)).slice(0,700);$b('bulkCount').textContent=`選択 ${selected.size}体 ／ 表示 ${visible.length}体（検索結果は最大700体まで表示）`;$b('bulkItems').innerHTML=visible.map(d=>{const icon=getDexIcon(d);return `<label class="bulk-dex-item ${selected.has(String(d.id))?'on':''}"><input type="checkbox" data-bulk-id="${esc(d.id)}" ${selected.has(String(d.id))?'checked':''}>${icon?`<img src="${esc(icon)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">`:''}<span>${esc(d.name)}<small style="display:block;color:#8ba2c0">No.${esc(d.dexNo||'?')}</small></span></label>`}).join('')||'<p class="muted">該当するキャラがありません</p>'}const close=()=>shell.remove();$b('bulkClose').onclick=close;shell.addEventListener('click',e=>{if(e.target===shell)close()});$b('bulkSearch').oninput=e=>{filter=dexNormalizedName(e.target.value);draw()};$b('bulkCategory').onchange=e=>{category=e.target.value;draw()};$b('bulkOnlyNew').onchange=e=>{onlyNew=e.target.checked;draw()};$b('bulkItems').onchange=e=>{let id=e.target.dataset.bulkId;if(!id)return;e.target.checked?selected.add(id):selected.delete(id);e.target.closest('label').classList.toggle('on',e.target.checked);$b('bulkCount').textContent=`選択 ${selected.size}体 ／ 表示 ${visible.length}体`};$b('bulkSelectVisible').onclick=()=>{visible.forEach(d=>selected.add(String(d.id)));draw()};$b('bulkClear').onclick=()=>{selected.clear();draw()};$b('bulkCommit').onclick=()=>{if(!selected.size){toast('キャラを選択してください');return}const {count,skip}=bulkAddCharacters(a,[...selected]);close();toast(`${count}体登録、${skip}体は登録済み等でスキップしました`)};draw()}
+// 端末内でスクショをグリッド切り出し。画像比較は同一オリジン/CORS許可画像でのみ可能。
+function screenshotImportModal(a){const shell=document.createElement('div');shell.className='modalback';shell.style.zIndex='20';shell.innerHTML=`<div class="modal" style="width:min(1040px,100%)"><div class="modalhead"><h3>モンスターBOX画像から登録候補を作成</h3><button id="shotClose">✕</button></div><p class="sub">スクショはサーバーに送信しません。画像を指定後、アイコン部分の列数・行数・余白を合わせ「切り出し」を押してください。画像照合は外部画像の制限により利用できない場合があります。</p><div class="field"><label>モンスターBOXのスクリーンショット</label><input type="file" id="shotFile" accept="image/*"></div><div style="text-align:center;margin:8px"><img id="shotPreview" class="shot-preview" hidden></div><div class="shot-params"><label>列数<input id="shotCols" type="number" value="5" min="1" max="12"></label><label>行数<input id="shotRows" type="number" value="4" min="1" max="20"></label><label>左余白 px<input id="shotLeft" type="number" value="0" min="0"></label><label>上余白 px<input id="shotTop" type="number" value="0" min="0"></label><label>アイコン幅 px<input id="shotSize" type="number" value="75" min="10"></label><label>アイコン間隔 px<input id="shotGap" type="number" value="0" min="0"></label></div><div class="toolbar" style="margin-top:10px"><button id="shotCut" class="primary">アイコンを切り出し</button><button id="shotAuto" disabled>画像から候補を自動照合（試験機能）</button><button id="shotSave">確認済みを一括登録</button></div><p id="shotStatus" class="sub"></p><div id="shotItems" class="shot-cards"></div><datalist id="shotNames"></datalist><p class="sub">自動照合できないキャラは、各画像の下に名前や図鑑No.を入力して候補を選べます。同名の進化形態は図鑑番号で確認してください。</p></div>`;document.body.appendChild(shell);const $s=id=>shell.querySelector('#'+id);let bitmap=null,tiles=[],canceled=false;const close=()=>{canceled=true;shell.remove()};$s('shotClose').onclick=close;shell.addEventListener('click',e=>{if(e.target===shell)close()});$s('shotFile').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const url=URL.createObjectURL(f);const image=new Image();await new Promise((ok,fail)=>{image.onload=ok;image.onerror=fail;image.src=url});bitmap=image;$s('shotPreview').src=url;$s('shotPreview').hidden=false;$s('shotSize').value=Math.max(24,Math.floor(image.naturalWidth/5));$s('shotStatus').textContent=`画像 ${image.naturalWidth} × ${image.naturalHeight} px を読み込みました。`; }catch(err){$s('shotStatus').textContent='画像を開けませんでした'}};
+ const entries=state.gachaDex.filter(d=>getDexIcon(d));const byId=new Map(state.gachaDex.map(d=>[String(d.id),d]));function pixelFingerprint(src){const can=document.createElement('canvas');can.width=8;can.height=8;const cx=can.getContext('2d',{willReadFrequently:true});cx.drawImage(src,0,0,8,8);const v=cx.getImageData(0,0,8,8).data;let out=[];for(let i=0;i<v.length;i+=4)out.push((v[i]*.299+v[i+1]*.587+v[i+2]*.114)/255);return out}function similarity(x,y){let s=0;for(let i=0;i<64;i++)s+=(x[i]-y[i])**2;return s}
+ function updateTiles(){ $s('shotItems').innerHTML=tiles.map((t,i)=>`<div class="shot-card"><img src="${t.src}" alt="切り出し${i+1}"><div style="flex:1;min-width:0"><input data-shot-slot="${i}" list="shotNames" placeholder="名前またはNo." value="${esc(t.query||'')}"><div class="selected-name" id="shotChosen${i}">${t.dexId?esc(byId.get(t.dexId)?.name||''):''}</div><small class="muted">${i+1}番目</small></div></div>`).join('');let seen=new Set(),known=state.gachaDex.filter(d=>{if(seen.has(d.name))return false;seen.add(d.name);return true}).slice(0,8000);$s('shotNames').innerHTML=known.map(d=>`<option value="${esc(d.name)}">`).join('')}
+ $s('shotCut').onclick=()=>{if(!bitmap){toast('スクショ画像を選択してください');return}const val=id=>Number($s(id).value)||0,cols=Math.max(1,Math.min(12,val('shotCols'))),rows=Math.max(1,Math.min(20,val('shotRows'))),left=val('shotLeft'),top=val('shotTop'),size=Math.max(10,val('shotSize')),gap=val('shotGap');tiles=[];for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const x=left+c*(size+gap),y=top+r*(size+gap);if(x+size>bitmap.naturalWidth||y+size>bitmap.naturalHeight)continue;const canvas=document.createElement('canvas');canvas.width=64;canvas.height=64;canvas.getContext('2d').drawImage(bitmap,x,y,size,size,0,0,64,64);tiles.push({src:canvas.toDataURL('image/png'),fp:pixelFingerprint(canvas),query:'',dexId:''})}updateTiles();$s('shotStatus').textContent=`${tiles.length}個の画像を切り出しました。画像の位置が違う場合は余白とサイズを調整してください。`;$s('shotAuto').disabled=!tiles.length};
+ $s('shotItems').addEventListener('input',e=>{const input=e.target.closest('[data-shot-slot]');if(!input)return;const t=tiles[Number(input.dataset.shotSlot)];t.query=input.value;const q=dexNormalizedName(input.value);let matches=state.gachaDex.filter(d=>String(d.dexNo||'')===q||dexNormalizedName(d.name)===q);t.dexId=matches.length===1?String(matches[0].id):'';$s('shotChosen'+input.dataset.shotSlot).textContent=t.dexId?`候補: ${matches[0].name} (No.${matches[0].dexNo||'?'})`:matches.length>1?'同名が複数あります。図鑑番号を入力してください':''});
+ $s('shotSave').onclick=()=>{const ids=tiles.filter(t=>t.dexId).map(t=>t.dexId);if(!ids.length){toast('照合したキャラがありません。候補を選択してください');return}if(!confirm(`${new Set(ids).size}種類を現在のアカウントに登録しますか？`))return;const {count,skip}=bulkAddCharacters(a,[...new Set(ids)]);close();toast(`${count}体を登録しました（${skip}体をスキップ）`)};
+ $s('shotAuto').onclick=async()=>{if(!tiles.length)return;$s('shotAuto').disabled=true; $s('shotStatus').textContent='図鑑画像を読み込んで照合しています。画像の取得制限がある場合は手動確認に切り替えてください。';let refs=[],tried=0,success=0;for(const d of entries.slice(0,800)){if(canceled)break;tried++;const url=getDexIcon(d);try{const img=new Image();img.crossOrigin='anonymous';img.referrerPolicy='no-referrer';await Promise.race([new Promise((ok,fail)=>{img.onload=ok;img.onerror=fail;img.src=url}),new Promise((_,fail)=>setTimeout(()=>fail(Error('timeout')),550))]);refs.push({d,fp:pixelFingerprint(img)});success++}catch(err){}if(tried%40===0){$s('shotStatus').textContent=`参照画像 ${tried}/800（取得成功 ${success}）`;await new Promise(ok=>setTimeout(ok,0))}if(tried>=40&&success===0)break}if(canceled)return;if(!success){$s('shotStatus').textContent='ブラウザの画像アクセス制限により自動照合はできませんでした。切り出した画像を見ながらキャラ名／No.で選択できます。';return}let matched=0;for(const t of tiles){let scores=refs.map(r=>({r,score:similarity(t.fp,r.fp)})).sort((a,b)=>a.score-b.score);if(scores.length&&scores[0].score<0.75&&(!scores[1]||scores[0].score<scores[1].score*.7)){t.dexId=String(scores[0].r.d.id);t.query=String(scores[0].r.d.dexNo||scores[0].r.d.name);matched++}}updateTiles();$s('shotStatus').textContent=`自動候補 ${matched}/${tiles.length}個。画像照合は誤判定する場合があります。必ず候補を確認・修正してください。`};}
+
 function characters(v,a){
  ensureCollectionPrefs(a);
- v.innerHTML=head('所持キャラ','キャラの検索・並び替え・グループ分けができます。',`<button class="primary" id="newChar">＋ キャラ追加</button>`)+
+ v.innerHTML=head('所持キャラ','キャラの検索・並び替え・グループ分けができます。',`<button class="primary" id="newChar">＋ キャラ追加</button><button id="bulkCharacters">☑ 図鑑から一括登録</button><button id="screenCharacters">▧ スクショから登録</button>`)+
  `<div class="panel"><div class="toolbar"><input id="charSearch" placeholder="キャラ名で検索"><select id="elementFilter"><option value="">全属性</option>${['火','水','木','光','闇'].map(x=>`<option>${x}</option>`).join('')}</select><select id="luckFilter"><option value="">ラック指定なし</option><option value="99">運極のみ</option><option value="1">ラック1以上</option></select></div>${collectionControls(a,'characters')}<div id="charList"></div></div>`;
  function list(){
   const q=$('#charSearch').value.toLowerCase(),el=$('#elementFilter').value,l=$('#luckFilter').value;
@@ -384,7 +544,7 @@ function characters(v,a){
  list();
  ['charSearch','elementFilter','luckFilter'].forEach(id=>$('#'+id).addEventListener('input',list));
  bindCollectionControls(a,'characters',list);
- $('#newChar').onclick=()=>charModal(a);
+ $('#newChar').onclick=()=>charModal(a);$('#bulkCharacters').onclick=()=>bulkDexModal(a);$('#screenCharacters').onclick=()=>screenshotImportModal(a);
  $('#charList').addEventListener('change',e=>{
   const sel=e.target.closest('[data-assign]');if(sel)assignCharacterGroup(a,sel.dataset.assign,sel.value);
  });
@@ -402,7 +562,7 @@ function characters(v,a){
 
 function gachaDex(v,a){
  const categories=['恒常キャラ','限定キャラ','コラボ','期間限定イベント','降臨キャラ'];
- v.innerHTML=head('キャラ図鑑','所持キャラとは独立した全アカウント共通の図鑑です。属性・カテゴリーに関係なく、図鑑番号の昇順で一覧表示します。属性・カテゴリーで絞り込みもできます。所持キャラに登録すると自動で点灯します。所持済みから「未所持にする」への修正だけ可能です。未所持から手動で所持済みにはできません。',`<button class="primary" id="dexAdd">＋ 図鑑にキャラ追加</button><button id="dexBulkImport">降臨データをCSVから追加</button><input type="file" id="dexBulkFile" accept=".csv,text/csv" hidden>`)+`<div id="dexSummary" class="dex-summary"></div><section class="panel"><div class="toolbar"><input id="dexSearch" placeholder="キャラクター名で検索"><select id="dexElement"><option value="">全属性</option>${['火','水','木','光','闇','未設定'].map(x=>`<option>${x}</option>`).join('')}</select><select id="dexCategory"><option value="">全カテゴリー</option>${categories.map(x=>`<option>${x}</option>`).join('')}</select><select id="dexDifficulty"><option value="">全難易度</option>${[...new Set(DESCENT_SEED.map(x=>x.questDifficulty).filter(Boolean))].map(x=>`<option>${esc(x)}</option>`).join('')}</select><select id="dexOwned"><option value="">所持状況すべて</option><option value="owned">所持済み</option><option value="unowned">未所持</option></select></div><div id="dexBreakdown" class="sub" style="margin:5px 0 12px"></div><div id="dexList"></div></section>`;
+ v.innerHTML=head('キャラ図鑑','所持キャラとは独立した全アカウント共通の図鑑です。属性・カテゴリーに関係なく、図鑑番号の昇順で一覧表示します。属性・カテゴリーで絞り込みもできます。所持キャラに登録すると自動で点灯します。所持済みから「未所持にする」への修正だけ可能です。未所持から手動で所持済みにはできません。',`<button class="primary" id="dexBatchOwn">☑ 所持キャラを一括登録</button><button class="primary" id="dexAdd">＋ 図鑑にキャラ追加</button><button id="dexBulkImport">降臨データをCSVから追加</button><input type="file" id="dexBulkFile" accept=".csv,text/csv" hidden>`)+`<div id="dexSummary" class="dex-summary"></div><section class="panel"><div class="toolbar"><input id="dexSearch" placeholder="キャラクター名で検索"><select id="dexElement"><option value="">全属性</option>${['火','水','木','光','闇','未設定'].map(x=>`<option>${x}</option>`).join('')}</select><select id="dexCategory"><option value="">全カテゴリー</option>${categories.map(x=>`<option>${x}</option>`).join('')}</select><select id="dexDifficulty"><option value="">全難易度</option>${[...new Set(DESCENT_SEED.map(x=>x.questDifficulty).filter(Boolean))].map(x=>`<option>${esc(x)}</option>`).join('')}</select><select id="dexOwned"><option value="">所持状況すべて</option><option value="owned">所持済み</option><option value="unowned">未所持</option></select></div><div id="dexBreakdown" class="sub" style="margin:5px 0 12px"></div><div id="dexList"></div></section>`;
   const ownedRecords=()=>state.accounts.flatMap(ac=>ac.characters||[]);
   function list(){let q=$('#dexSearch').value.trim().toLowerCase(),el=$('#dexElement').value,cat=$('#dexCategory').value,ownedFilter=$('#dexOwned').value,difficulty=$('#dexDifficulty').value,records=ownedRecords(),manualUnowned=new Set(state.dexMarkedUnowned||[]),all=state.gachaDex||[],total=all.length,got=all.filter(x=>isDexOwned(x,records,manualUnowned)).length,pct=total?Math.round(got/total*100):0;
  $('#dexSummary').innerHTML=stat('図鑑登録数',total,'体')+stat('所持数',got,'体')+stat('所持率',pct,'%');
@@ -412,7 +572,7 @@ function gachaDex(v,a){
  $('#dexList').innerHTML='<div class="dex-grid">'+arr.map((x,i)=>{let has=isDexOwned(x,records,manualUnowned),no=x.dexNo?`No. ${x.dexNo}`:'番号未登録';const icon=getDexIcon(x);return `<div class="dex-card ${has?'owned':''}">${icon?`<img class="dex-icon" src="${icon}" alt="${esc(x.name)}" loading="lazy" referrerpolicy="no-referrer">`:`<div class="dex-icon-fallback">画像なし</div>`}<div style="min-width:0;flex:1"><div class="dex-name">${esc(x.name)}</div><div class="dex-meta">${no}　｜　${esc(x.element||'未設定')}　｜　${esc(x.category||'未設定')}　｜　${esc(x.questDifficulty||'難易度未分類')}　｜　入手対象：${esc(x.questTarget||'未設定')}　｜　${has?'所持済み':'未所持'}${!has&&manualUnowned.has(dexOwnershipKey(x))?'<span class="dex-unowned-manual">（手動で未所持に設定）</span>':''}</div></div><div class="actions">${has?`<button class="danger dex-unown" data-dex-unown="${esc(x.id)}" title="所持・厳選データは削除しません">未所持にする</button>`:''}<button data-dex-edit="${esc(x.id)}">編集</button></div></div>`}).join('')+'</div>';
  }
  function modal(item){item=item||{};showModal(item.id?'図鑑キャラ編集':'図鑑キャラ追加',`<div class="formgrid"><div class="field full"><label>キャラクター名 *</label><input id="dxName" value="${esc(item.name||'')}" placeholder="例：ルシファー"></div><div class="field"><label>図鑑番号</label><input id="dxNo" type="number" min="1" value="${esc(item.dexNo||'')}" placeholder="図鑑No."></div><div class="field"><label>属性</label><select id="dxElement">${['火','水','木','光','闇','未設定'].map(x=>`<option ${item.element===x?'selected':''}>${x}</option>`).join('')}</select></div><div class="field"><label>カテゴリー</label><select id="dxCategory">${categories.map(x=>`<option ${item.category===x?'selected':''}>${x}</option>`).join('')}</select></div><div class="field"><label>入手クエストの難易度</label><input id="dxDifficulty" value="${esc(item.questDifficulty||'')}" placeholder="例：轟絶"></div><div class="field"><label>入手対象キャラ（クエスト名未確認）</label><input id="dxQuestTarget" value="${esc(item.questTarget||'')}" placeholder="入手対象"></div></div><p class="muted" style="font-size:11px">図鑑の登録・編集は全アカウント共通です。所持判定は全アカウントの登録キャラを図鑑ID・番号優先で照合し、旧データは名前で照合します。</p>`,`保存する`,()=>{let name=$('#dxName').value.trim();if(!name){toast('キャラクター名を入力してください');return false}let dup=state.gachaDex.find(x=>x.name.toLowerCase()===name.toLowerCase()&&x.id!==item.id);if(dup){toast('同じ名前のキャラクターが登録済みです');return false}let obj={id:item.id||'dex_'+crypto.randomUUID(),name,dexNo:Number($('#dxNo').value)||null,element:$('#dxElement').value,category:$('#dxCategory').value,questDifficulty:$('#dxDifficulty').value.trim(),questTarget:$('#dxQuestTarget').value.trim(),questSource:item.questSource||''};if(item.id)Object.assign(item,obj);else state.gachaDex.push(obj);save();toast('図鑑を更新しました')})}
- list();['dexSearch','dexElement','dexCategory','dexDifficulty','dexOwned'].forEach(id=>$('#'+id).addEventListener('input',list));$('#dexAdd').onclick=()=>modal();$('#dexBulkImport').onclick=()=>$('#dexBulkFile').click();$('#dexBulkFile').onchange=async e=>{const file=e.target.files?.[0];if(!file)return;try{const raw=(await file.text()).replace(/^\uFEFF/,'');const lines=raw.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);const rows=lines.slice(1).map(line=>line.split(',').map(x=>x.trim().replace(/^"|"$/g,'')));if(!/^図鑑番号,キャラ名,属性,レア度/.test(lines[0]))throw Error('CSVの1行目は「図鑑番号,キャラ名,属性,レア度」にしてください');let added=0,skipped=0;const fresh=[];for(const [no,name,element,rarity] of rows){const n=Number(no);if(!Number.isSafeInteger(n)||n<1||!name||!['火','水','木','光','闇'].includes(element)||!['6','☆6','★6','☆６','★６'].includes(rarity)){skipped++;continue}if(state.gachaDex.some(x=>Number(x.dexNo)===n)||fresh.some(x=>x.dexNo===n)){skipped++;continue}fresh.push({id:'drop_'+n,name,dexNo:n,element,category:'降臨キャラ',rarity:6});added++}if(!added){toast('追加できる新規データがありません');return}if(!confirm(`降臨☆6を${added}件追加します。既存の図鑑・所持データは変更しません。無効・重複${skipped}件を除外します。続行しますか？`))return;state.gachaDex.push(...fresh);save();toast(`${added}件追加しました`)}catch(err){alert('CSV読み込み失敗：'+err.message)}finally{e.target.value=''}};$('#dexList').onclick=e=>{
+ list();['dexSearch','dexElement','dexCategory','dexDifficulty','dexOwned'].forEach(id=>$('#'+id).addEventListener('input',list));$('#dexBatchOwn').onclick=()=>bulkDexModal(a);$('#dexAdd').onclick=()=>modal();$('#dexBulkImport').onclick=()=>$('#dexBulkFile').click();$('#dexBulkFile').onchange=async e=>{const file=e.target.files?.[0];if(!file)return;try{const raw=(await file.text()).replace(/^\uFEFF/,'');const lines=raw.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);const rows=lines.slice(1).map(line=>line.split(',').map(x=>x.trim().replace(/^"|"$/g,'')));if(!/^図鑑番号,キャラ名,属性,レア度/.test(lines[0]))throw Error('CSVの1行目は「図鑑番号,キャラ名,属性,レア度」にしてください');let added=0,skipped=0;const fresh=[];for(const [no,name,element,rarity] of rows){const n=Number(no);if(!Number.isSafeInteger(n)||n<1||!name||!['火','水','木','光','闇'].includes(element)||!['6','☆6','★6','☆６','★６'].includes(rarity)){skipped++;continue}if(state.gachaDex.some(x=>Number(x.dexNo)===n)||fresh.some(x=>x.dexNo===n)){skipped++;continue}fresh.push({id:'drop_'+n,name,dexNo:n,element,category:'降臨キャラ',rarity:6});added++}if(!added){toast('追加できる新規データがありません');return}if(!confirm(`降臨☆6を${added}件追加します。既存の図鑑・所持データは変更しません。無効・重複${skipped}件を除外します。続行しますか？`))return;state.gachaDex.push(...fresh);save();toast(`${added}件追加しました`)}catch(err){alert('CSV読み込み失敗：'+err.message)}finally{e.target.value=''}};$('#dexList').onclick=e=>{
   const unown=e.target.closest('[data-dex-unown]');
   if(unown){
    const x=state.gachaDex.find(d=>String(d.id)===unown.dataset.dexUnown);
@@ -421,7 +581,7 @@ function gachaDex(v,a){
    if((state.dexMarkedUnowned||[]).includes(key))return;
    if(!confirm(`${x.name}（No.${x.dexNo||'未登録'}）を図鑑上で「未所持」に変更しますか？\n\n所持キャラやわくわく厳選の登録データは削除しません。\n再び所持キャラとして登録・保存した場合は自動で所持済みになります。`))return;
    state.dexMarkedUnowned.push(key);
-   localStorage.setItem(KEY,JSON.stringify(state));list();toast('図鑑上で未所持に変更しました');return;
+   localStorage.setItem(KEY,JSON.stringify(state));markAutoSyncDirty();list();toast('図鑑上で未所持に変更しました');return;
   }
   const edit=e.target.closest('[data-dex-edit]');
   if(edit){let item=state.gachaDex.find(x=>String(x.id)===edit.dataset.dexEdit);if(item)modal(item)}
