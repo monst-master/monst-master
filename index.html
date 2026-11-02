@@ -181,7 +181,7 @@
 <p class="muted" style="font-size:11px;margin:10px 0 0">初回移行は手動操作です。先に「↓バックアップ」でJSONを保存してください。自動上書き・自動同期は行いません。</p>
 </section>
 
-<div class="footer">MONST MASTER v46 · データはこのブラウザ内にも保存されます。クラウド同期前にJSONバックアップを作成してください。</div></div><div id="modalRoot"></div><div id="toastRoot"></div>
+<div class="footer">MONST MASTER v49 · データはこのブラウザ内にも保存されます。クラウド同期前にJSONバックアップを作成してください。</div></div><div id="modalRoot"></div><div id="toastRoot"></div>
 
 <script>
 (function(){
@@ -507,7 +507,59 @@ function init(){if(!state.active)state.active=state.accounts[0].id;$('#accountSe
 function toast(t){$('#toastRoot').innerHTML=`<div class="toast">${esc(t)}</div>`;setTimeout(()=>$('#toastRoot').innerHTML='',2200)}
 function head(title,sub,action=''){return `<div class="page-head"><div><h2>${title}</h2><div class="sub">${sub}</div></div>${action}</div>`}
 function stat(label,value,unit=''){return `<div class="stat"><div class="k">${label}</div><div class="v">${value}<em> ${unit}</em></div></div>`}
-function render(){let a=acct();$('#accountSelect').innerHTML=state.accounts.map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join('');$('#accountSelect').value=a.id;$('#nav').querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));let v=$('#view');({dashboard:dashboard,characters:characters,gachaDex:gachaDex,luck:luck,quests:quests,ex:exPage,bonds:bondsPage,calculators:calculators,settings:settings,usageAnalytics:usageAnalyticsPage}[page]||dashboard)(v,a)}
+// v49: Keep search terms and filters during saves, edits and page navigation.
+// UI-only state: do not write these values into character data or Google backups.
+const PAGE_FILTER_IDS={
+ characters:['charSearch','elementFilter','luckFilter'],
+ gachaDex:['dexSearch','dexElement','dexCategory','dexDifficulty','dexOwned'],
+ luck:['luckSearch','luckStatus'],
+ quests:['questCategoryFilter','questSearch']
+};
+const pageFilters=new Map();
+let lastRenderedPage=null,lastRenderedAccountId=null;
+function filterCacheKey(p,accountId){return p==='gachaDex'?'gachaDex:shared':p+':'+accountId}
+function capturePageFilters(){
+ const ids=PAGE_FILTER_IDS[lastRenderedPage];if(!ids||!lastRenderedAccountId)return;
+ const view=$('#view'),stored={};
+ for(const id of ids){const input=view.querySelector('#'+id);if(input)stored[id]=input.value;}
+ if(Object.keys(stored).length)pageFilters.set(filterCacheKey(lastRenderedPage,lastRenderedAccountId),stored);
+}
+function restorePageFilters(p,accountId){
+ const stored=pageFilters.get(filterCacheKey(p,accountId));if(!stored)return;
+ const view=$('#view'),ids=PAGE_FILTER_IDS[p]||[];
+ let changed=false;
+ for(const id of ids){
+  const input=view.querySelector('#'+id);
+  if(!input||!Object.prototype.hasOwnProperty.call(stored,id))continue;
+  // If an option was deleted, leave the control at its safe default.
+  if(input.tagName==='SELECT'&&![...input.options].some(opt=>opt.value===stored[id]))continue;
+  if(input.value!==stored[id]){input.value=stored[id];changed=true}
+ }
+ // All values are restored before a single list refresh, avoiding transient filters.
+ if(changed){
+  const target=view.querySelector('#'+(p==='quests'?'questCategoryFilter':ids[0]));
+  if(target)target.dispatchEvent(new Event(p==='quests'?'change':'input',{bubbles:true}));
+ }
+}
+function render(){
+ const a=acct(),view=$('#view');
+ const sameView=lastRenderedPage===page&&lastRenderedAccountId===a.id;
+ const oldScroll=sameView?{x:window.scrollX,y:window.scrollY}:null;
+ const focused=sameView&&view.contains(document.activeElement)?document.activeElement?.id:null;
+ let caret=null;
+ if(focused&&document.activeElement instanceof HTMLInputElement){
+  try{caret=[document.activeElement.selectionStart,document.activeElement.selectionEnd]}catch(_e){}
+ }
+ capturePageFilters();
+ $('#accountSelect').innerHTML=state.accounts.map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join('');
+ $('#accountSelect').value=a.id;
+ $('#nav').querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));
+ ({dashboard:dashboard,characters:characters,gachaDex:gachaDex,luck:luck,quests:quests,ex:exPage,bonds:bondsPage,calculators:calculators,settings:settings,usageAnalytics:usageAnalyticsPage}[page]||dashboard)(view,a);
+ lastRenderedPage=page;lastRenderedAccountId=a.id;
+ restorePageFilters(page,a.id);
+ if(focused){const input=view.querySelector('#'+focused);if(input){input.focus({preventScroll:true});if(caret&&typeof input.setSelectionRange==='function')try{input.setSelectionRange(...caret)}catch(_e){}}}
+ if(oldScroll)requestAnimationFrame(()=>window.scrollTo(oldScroll.x,oldScroll.y));
+}
 function dashboard(v,a){
  const perfected=a.characters.filter(c=>c.perfected).length, done=a.characters.filter(c=>c.luck>=99).length;
  const exTotal=(a.exTargets||[]).reduce((sum,x)=>sum+(Number(x.runs)||0),0);
