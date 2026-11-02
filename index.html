@@ -518,7 +518,7 @@ function dashboard(v,a){
  $('#dashboardAccountSelect').onchange=e=>{if(!state.accounts.some(x=>x.id===e.target.value))return;state.active=e.target.value;save();};
  $('#saveProfile').onclick=()=>{a.rank=$('#rankInput').value;a.luckCount=Number($('#luckInput').value)||0;save();toast('保存しました')};
 }
-function charCard(c){return `<div class="charcard"><strong>${esc(c.name)}</strong><small>${esc(c.element||'属性未設定')} · ${esc(c.rarity||'レア度未設定')} · ラック ${c.luck||0}</small><div class="bottom"><span class="pill ${c.perfected?'green':''}">${c.perfected?'厳選完了':'厳選未完了'}</span><span class="muted">${esc(c.form||'')}</span></div></div>`}
+function charCard(c){return `<div class="charcard"><strong>${esc(c.name)}</strong><small>${esc(c.element||'属性未設定')} · ${esc(c.rarity||'レア度未設定')} · ラック ${c.luck||0}</small><div class="bottom"><span class="pill ${c.perfected?'green':''}">${c.perfected?'厳選完了':'厳選未完了'}</span></div></div>`}
 
 // v21: グループはアカウントごとに共有し、表示設定は2画面で独立管理。
 const COLLECTION_SORTS=[
@@ -527,7 +527,7 @@ const COLLECTION_SORTS=[
  ['element','属性順（火→水→木→光→闇）'],['luckDesc','ラック：高い順'],['luckAsc','ラック：低い順'],
  ['perfectFirst','厳選完了を先頭'],['todoFirst','厳選未完了を先頭']
 ];
-const COLLECTION_GROUP_BY=[['custom','作成したグループ'],['none','グループ分けしない'],['element','属性別'],['form','進化形態別'],['status','厳選状況別']];
+const COLLECTION_GROUP_BY=[['custom','作成したグループ'],['none','グループ分けしない'],['element','属性別'],['status','厳選状況別']];
 const COLLECTION_ELEMENTS=['火','水','木','光','闇','未設定'];
 function ensureCollectionPrefs(a){
  if(!Array.isArray(a.characterGroups))a.characterGroups=[];
@@ -573,7 +573,6 @@ function collectionGroupTitle(c,a,mode){
  if(mode==='none')return 'すべて';
  if(mode==='custom')return (a.characterGroups.find(g=>g.id===c.collectionGroupId)||{}).name||'未分類';
  if(mode==='element')return c.element&&COLLECTION_ELEMENTS.includes(c.element)?c.element:'未設定';
- if(mode==='form')return c.form||'形態未設定';
  return c.perfected?'厳選完了':'厳選未完了';
 }
 function collectionGroups(arr,a,key){
@@ -590,7 +589,6 @@ function collectionGroups(arr,a,key){
   titles.sort((a,b)=>{let ia=order.indexOf(a),ib=order.indexOf(b);return (ia<0?Infinity:ia)-(ib<0?Infinity:ib)||a.localeCompare(b,'ja')});
  }else if(mode==='element')titles.sort((a,b)=>COLLECTION_ELEMENTS.indexOf(a)-COLLECTION_ELEMENTS.indexOf(b));
  else if(mode==='status')titles.sort((a,b)=>a==='厳選未完了'?-1:b==='厳選未完了'?1:0);
- else if(mode==='form')titles.sort((a,b)=>a.localeCompare(b,'ja'));
  return titles.map(name=>({name,items:by.get(name)}));
 }
 function collectionGroupOptions(a,current,includeAll=true){
@@ -710,8 +708,8 @@ function characters(v,a){
  function list(){
   const q=$('#charSearch').value.toLowerCase(),el=$('#elementFilter').value,l=$('#luckFilter').value;
   const arr=a.characters.filter(c=>collectionName(c).toLowerCase().includes(q)&&(!el||c.element===el)&&(!l||(l==='99'?c.luck>=99:c.luck>0))&&collectionVisible(c,a,'characters'));
-  $('#charList').innerHTML=renderCollectionSections(arr,a,'characters',['順序','キャラ名','属性','形態','ラック','厳選','所属グループ','操作'],(c,manual,ids,i)=>
-   `<tr><td>${collectionMoveControls(c,ids,i,manual)}</td><td><div class="collection-character-cell">${characterIconHtml(c)}<div class="collection-character-label"><b>${esc(c.name)}</b>${c.dexNo?`<div class="sub">No.${esc(c.dexNo)}</div>`:''}</div></div></td><td>${esc(c.element||'-')}</td><td>${esc(c.form||'-')}</td><td>${Number(c.luck)||0}</td><td>${c.perfected?'<span class="pill green">完了</span>':'<span class="pill">未完了</span>'}</td><td><select class="collection-assign" data-assign="${esc(c.id)}">${collectionGroupOptions(a,c.collectionGroupId||'',false)}</select></td><td><div class="actions"><button data-edit="${esc(c.id)}">編集</button><button class="danger" data-del="${esc(c.id)}">削除</button></div></td></tr>`);
+  $('#charList').innerHTML=renderCollectionSections(arr,a,'characters',['順序','キャラ名','属性','ラック','厳選','所属グループ','操作'],(c,manual,ids,i)=>
+   `<tr><td>${collectionMoveControls(c,ids,i,manual)}</td><td><div class="collection-character-cell">${characterIconHtml(c)}<div class="collection-character-label"><b>${esc(c.name)}</b>${c.dexNo?`<div class="sub">No.${esc(c.dexNo)}</div>`:''}</div></div></td><td>${esc(c.element||'-')}</td><td>${Number(c.luck)||0}</td><td>${c.perfected?'<span class="pill green">完了</span>':'<span class="pill">未完了</span>'}</td><td><select class="collection-assign" data-assign="${esc(c.id)}">${collectionGroupOptions(a,c.collectionGroupId||'',false)}</select></td><td><div class="actions"><button data-edit="${esc(c.id)}">編集</button><button class="danger" data-del="${esc(c.id)}">削除</button></div></td></tr>`);
  }
  list();
  ['charSearch','elementFilter','luckFilter'].forEach(id=>$('#'+id).addEventListener('input',list));
@@ -760,7 +758,7 @@ function gachaDex(v,a){
  };
 }
 
-function charModal(a,c){c=c||{};ensureCollectionPrefs(a);showModal('キャラ情報',`<div class="formgrid"><div class="field"><label>キャラ名（図鑑から選択） *</label><input id="fName" autocomplete="off" value="${esc(c.name||'')}" placeholder="名前を入力して候補を選択"><div id="fSuggestions" class="sub" style="max-height:180px;overflow:auto;margin-top:6px"></div><input type="hidden" id="fDexId" value="${esc(c.dexId||'')}"><div class="sub">同名キャラは図鑑番号で区別できます。候補を選択してください。</div></div><div class="field"><label>属性（図鑑と自動一致）</label><select id="fElement"><option value="">未設定</option>${['火','水','木','光','闇'].map(x=>`<option ${c.element===x?'selected':''}>${x}</option>`).join('')}</select></div><div class="field"><label>形態・進化形態</label><select id="fForm"><option value="">選択してください</option>${['進化前','進化','神化','獣進化','獣進化改','真獣進化'].map(x=>`<option value="${x}" ${c.form===x?'selected':''}>${x}</option>`).join('')}${c.form&&!['進化前','進化','神化','獣進化','獣進化改','真獣進化'].includes(c.form)?`<option value="${esc(c.form)}" selected>${esc(c.form)}（旧登録）</option>`:''}</select></div><div class="field"><label>レア度</label><select id="fRarity"><option value="">選択してください</option>${['☆２','☆４','☆５','☆６'].map(x=>`<option value="${x}" ${c.rarity===x||c.rarity===x.replace('☆','★').replace(/[２４５６]/g,n=>String.fromCharCode(n.charCodeAt(0)-0xFEE0))?'selected':''}>${x}</option>`).join('')}</select></div><div class="field"><label>ラック（1～99）</label><select id="fLuck">${Array.from({length:99},(_,i)=>i+1).map(x=>`<option value="${x}" ${Number(c.luck??1)===x?'selected':''}>${x}</option>`).join('')}</select></div><div class="field"><label>厳選状況</label><select id="fPerfect"><option value="0" ${!c.perfected?'selected':''}>未完了</option><option value="1" ${c.perfected?'selected':''}>完了</option></select></div><div class="field"><label>所属グループ</label><select id="fGroup">${collectionGroupOptions(a,c.collectionGroupId||'',false)}</select></div><div class="field full"><label>メモ</label><textarea id="fMemo">${esc(c.memo||'')}</textarea></div></div>`,`保存する`,()=>{let name=$('#fName').value.trim();if(!name){toast('キャラ名を入力してください');return false}const selectedDex=state.gachaDex.find(x=>x.id===$('#fDexId').value);if(!selectedDex||selectedDex.name!==name){toast('図鑑の候補からキャラを選択してください');return false}let item={dexId:selectedDex.id,dexNo:selectedDex.dexNo||null,id:c.id||crypto.randomUUID(),name,element:['火','水','木','光','闇'].includes(selectedDex.element)?selectedDex.element:$('#fElement').value,form:$('#fForm').value,rarity:$('#fRarity').value,luck:Math.max(1,Math.min(99,Number($('#fLuck').value)||1)),perfected:$('#fPerfect').value==='1',memo:$('#fMemo').value,collectionGroupId:$('#fGroup').value,seeds:c.seeds||[],seedDetails:c.seedDetails||[],book:!!c.book,battleBook:!!c.battleBook,levelBook:!!c.levelBook,emblem:c.emblem||''};if(c.id)Object.assign(c,item);else a.characters.push(item);
+function charModal(a,c){c=c||{};ensureCollectionPrefs(a);showModal('キャラ情報',`<div class="formgrid"><div class="field"><label>キャラ名（図鑑から選択） *</label><input id="fName" autocomplete="off" value="${esc(c.name||'')}" placeholder="名前を入力して候補を選択"><div id="fSuggestions" class="sub" style="max-height:180px;overflow:auto;margin-top:6px"></div><input type="hidden" id="fDexId" value="${esc(c.dexId||'')}"><div class="sub">同名キャラは図鑑番号で区別できます。候補を選択してください。</div></div><div class="field"><label>属性（図鑑と自動一致）</label><select id="fElement"><option value="">未設定</option>${['火','水','木','光','闇'].map(x=>`<option ${c.element===x?'selected':''}>${x}</option>`).join('')}</select></div><div class="field"><label>レア度</label><select id="fRarity"><option value="">選択してください</option>${['☆２','☆４','☆５','☆６'].map(x=>`<option value="${x}" ${c.rarity===x||c.rarity===x.replace('☆','★').replace(/[２４５６]/g,n=>String.fromCharCode(n.charCodeAt(0)-0xFEE0))?'selected':''}>${x}</option>`).join('')}</select></div><div class="field"><label>ラック（1～99）</label><select id="fLuck">${Array.from({length:99},(_,i)=>i+1).map(x=>`<option value="${x}" ${Number(c.luck??1)===x?'selected':''}>${x}</option>`).join('')}</select></div><div class="field"><label>厳選状況</label><select id="fPerfect"><option value="0" ${!c.perfected?'selected':''}>未完了</option><option value="1" ${c.perfected?'selected':''}>完了</option></select></div><div class="field"><label>所属グループ</label><select id="fGroup">${collectionGroupOptions(a,c.collectionGroupId||'',false)}</select></div><div class="field full"><label>メモ</label><textarea id="fMemo">${esc(c.memo||'')}</textarea></div></div>`,`保存する`,()=>{let name=$('#fName').value.trim();if(!name){toast('キャラ名を入力してください');return false}const selectedDex=state.gachaDex.find(x=>x.id===$('#fDexId').value);if(!selectedDex||selectedDex.name!==name){toast('図鑑の候補からキャラを選択してください');return false}let item={dexId:selectedDex.id,dexNo:selectedDex.dexNo||null,id:c.id||crypto.randomUUID(),name,element:['火','水','木','光','闇'].includes(selectedDex.element)?selectedDex.element:$('#fElement').value,form:c.form||'',rarity:$('#fRarity').value,luck:Math.max(1,Math.min(99,Number($('#fLuck').value)||1)),perfected:$('#fPerfect').value==='1',memo:$('#fMemo').value,collectionGroupId:$('#fGroup').value,seeds:c.seeds||[],seedDetails:c.seedDetails||[],book:!!c.book,battleBook:!!c.battleBook,levelBook:!!c.levelBook,emblem:c.emblem||''};if(c.id)Object.assign(c,item);else a.characters.push(item);
  // 所持キャラの登録・保存時だけ、自動判定へ戻す（図鑑に手動の「所持」操作は置かない）。
  state.dexMarkedUnowned=(state.dexMarkedUnowned||[]).filter(key=>key!==dexOwnershipKey(selectedDex));
  save();toast('キャラ情報を保存しました')});bindCharDexPicker();}
