@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MONST MASTER v59</title>
+<title>MONST MASTER v59.1 — カレンダー修正版</title>
 <style>
 :root{--bg:#080d18;--panel:#111b2c;--panel2:#17243a;--line:#263752;--txt:#eef4ff;--muted:#9aacc7;--blue:#59b8ff;--cyan:#62e4e8;--gold:#ffc96b;--red:#ff7384;--green:#6de0ae;--shadow:0 12px 34px #0005}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% -10%,#16365b 0,transparent 38%),radial-gradient(ellipse at 100% 0,#20264c 0,transparent 30%),var(--bg);color:var(--txt);font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid var(--line);background:#1a2a43;color:var(--txt);border-radius:10px;padding:9px 13px}button:hover{border-color:var(--blue);filter:brightness(1.12)}button.primary{background:linear-gradient(120deg,#167ac2,#3759bc);border:0}button.danger{color:#ff9aa5}input,select,textarea{width:100%;background:#0b1423;color:var(--txt);border:1px solid var(--line);border-radius:9px;padding:10px;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--blue)}textarea{min-height:76px;resize:vertical}.app{max-width:1440px;margin:auto;padding:22px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}.brand{display:flex;align-items:center;gap:13px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#3bd6e8,#3974d8 60%,#8d63dc);display:grid;place-items:center;color:#061323;font-weight:1000;font-size:20px;box-shadow:0 0 28px #43c8f766}.brand h1{font-size:20px;letter-spacing:2px;margin:0}.brand small{color:var(--muted);letter-spacing:2px}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.layout{display:grid;grid-template-columns:230px 1fr;gap:18px}.sidebar,.panel,.stat{background:linear-gradient(160deg,#142238ee,#0e1727f2);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.sidebar{padding:13px;height:max-content;position:sticky;top:14px}.account-label{font-size:11px;color:var(--muted);margin:4px 7px 7px}.nav{display:grid;gap:5px;margin-top:16px}.nav button{text-align:left;background:transparent;border-color:transparent;color:#bdcbe0}.nav button.active{background:#1b3656;border-color:#31577e;color:#fff}.nav button span{display:inline-block;width:27px;color:var(--cyan)}.content{min-width:0}.page-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:3px 0 16px}.page-head h2{margin:0;font-size:23px}.sub{color:var(--muted);font-size:12px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:15px}.stat{padding:16px}.stat .k{color:var(--muted);font-size:12px}.stat .v{font-size:27px;font-weight:800;margin-top:5px}.stat .v em{font-style:normal;font-size:12px;color:var(--muted);font-weight:500}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel{padding:17px;margin-bottom:14px}.panel h3{font-size:15px;margin:0 0 13px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.toolbar>*{max-width:230px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.field label{display:block;color:var(--muted);font-size:12px;margin:0 0 5px}.field.full{grid-column:1/-1}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:620px}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid #263752;font-size:13px}th{color:var(--muted);font-weight:600;white-space:nowrap}.empty{text-align:center;color:var(--muted);padding:28px}.pill{display:inline-block;padding:3px 8px;border-radius:99px;background:#203b59;color:#aee1ff;font-size:11px}.pill.gold{background:#49371c;color:#ffdc9a}.pill.green{background:#173d36;color:#9af0c8}.actions{display:flex;gap:6px}.actions button{padding:5px 8px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}.charcard{background:#0d1829;border:1px solid var(--line);border-radius:12px;padding:13px}.charcard strong{display:block;font-size:15px}.charcard small{color:var(--muted)}.charcard .bottom{display:flex;justify-content:space-between;align-items:center;margin-top:10px}.counter{display:flex;align-items:center;gap:10px}.counter strong{font-size:28px;min-width:45px;text-align:center}.counter button{font-size:18px;padding:5px 12px}.progress{height:8px;background:#263752;border-radius:20px;overflow:hidden;margin-top:10px}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan))}.muted{color:var(--muted)}.right{margin-left:auto}.hide{display:none!important}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1d3c55;border:1px solid #4d88b8;padding:10px 17px;border-radius:12px;box-shadow:var(--shadow);z-index:9}.modalback{position:fixed;inset:0;background:#0009;display:grid;place-items:center;padding:15px;z-index:10}.modal{width:min(620px,100%);max-height:90vh;overflow:auto;background:#111d30;border:1px solid #385071;border-radius:17px;padding:20px;box-shadow:var(--shadow)}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.modalhead h3{margin:0}.seedslot{padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1829}.footer{color:#7185a3;text-align:center;font-size:11px;margin:20px 0 5px}
@@ -243,29 +243,29 @@ window.MM57IsDrop = function(c,db){
 </script>
 <style>
 /* MONST MASTER v58 — additive UI; does not replace existing theme */
-#mm57-root {background:linear-gradient(145deg,#142438,#0c1525);color:#edf4ff;border:1px solid #36516c;border-radius:15px;padding:18px;min-height:380px;font:14px/1.55 system-ui,-apple-system,sans-serif}
-#mm57-root *{box-sizing:border-box}
-#mm57-root h2{font-size:23px;margin:0 0 5px}#mm57-root h3{margin:0 0 13px;font-size:16px}#mm57-root p{margin:6px 0}
-#mm57-root .mm-muted{color:#9fb4cc;font-size:12px}#mm57-root .mm-section{background:#111f31;border:1px solid #29415d;border-radius:12px;padding:15px;margin:13px 0}
-#mm57-root .mm-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
-#mm57-root button,#mm57-root input,#mm57-root select,#mm57-root textarea{font:inherit;min-height:36px;max-width:100%;border-radius:8px;border:1px solid #385474;padding:7px 10px;color:#ecf4ff;background:#0c1a2b}
-#mm57-root button{cursor:pointer;background:#193955}#mm57-root button:hover{filter:brightness(1.17)}#mm57-root button.mm-primary{background:#2364a0;border-color:#3779b3}#mm57-root button.mm-danger{color:#ff9aa5}
-#mm57-root input[type=checkbox]{min-height:0;width:auto}#mm57-root input[type=search],#mm57-root input[type=text],#mm57-root input[type=datetime-local]{min-width:155px}
-#mm57-root textarea{width:100%;min-height:80px}#mm57-root label{display:flex;align-items:center;gap:6px;flex-wrap:wrap;color:#d7e8ff;font-size:12px}
-#mm57-root label.mm-stack{display:flex;flex-direction:column;align-items:flex-start;gap:5px}#mm57-root label.mm-stack input,#mm57-root label.mm-stack select{width:100%}
-#mm57-root .mm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:11px}
-#mm57-root .mm-stat{border:1px solid #28425e;border-radius:11px;padding:12px;background:#11263c}#mm57-root .mm-stat strong{display:block;font-size:23px;font-weight:800}
-#mm57-root table{width:100%;min-width:700px;border-collapse:collapse}#mm57-root th,#mm57-root td{padding:10px 8px;border-bottom:1px solid #2c4057;text-align:left;font-size:12px;vertical-align:middle}#mm57-root th{color:#9ab6d3}#mm57-root .mm-scroll{overflow:auto;max-width:100%}
-#mm57-root .mm-pill{display:inline-block;padding:3px 9px;border-radius:30px;background:#1b435e;color:#c5edff;font-size:11px}#mm57-root .mm-good{color:#91e4b8}#mm57-root .mm-warn{color:#ffcf86}#mm57-root .mm-bad{color:#ff9baa}
-#mm57-root .mm-card{padding:11px;background:#102239;border:1px solid #304b66;border-radius:10px;margin:8px 0}
-#mm57-root .mm-progress{height:8px;background:#253a54;border-radius:20px;overflow:hidden}#mm57-root .mm-progress>div{background:#4ba7db;height:100%}
-#mm57-root .mm-event-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}#mm57-root .mm-day{min-height:76px;padding:5px;border:1px solid #28415b;border-radius:7px;overflow:hidden}#mm57-root .mm-day strong{font-size:11px}#mm57-root .mm-event-chip{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#205276;border-radius:5px;font-size:10px;margin-top:4px;padding:2px 3px}
-#mm57-root .mm-banner{padding:10px 12px;border-radius:9px;background:#1d334a;border:1px solid #3d5c74;margin:10px 0}
-#mm57-root .mm-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:10px 0}
-#mm57-root .mm-actions{display:flex;gap:6px;flex-wrap:wrap}#mm57-root .mm-actions button{font-size:12px;padding:5px 8px}
-#mm57-root .mm-chartbar{display:flex;align-items:center;gap:10px;margin:9px 0}#mm57-root .mm-chartbar span{min-width:20px}#mm57-root .mm-chartbar i{display:block;background:#4f9eda;height:18px;border-radius:5px}
-#mm57-root :focus-visible{outline:2px solid #62c9ff;outline-offset:2px}
-@media(max-width:600px){#mm57-root{padding:10px}#mm57-root .mm-event-grid{gap:2px}#mm57-root .mm-day{min-height:58px;padding:3px}#mm57-root .mm-event-chip{font-size:9px}#mm57-root .mm-toolbar>*{max-width:100%}}
+:is(#mm57-root,#mm59-events-inline) {background:linear-gradient(145deg,#142438,#0c1525);color:#edf4ff;border:1px solid #36516c;border-radius:15px;padding:18px;min-height:380px;font:14px/1.55 system-ui,-apple-system,sans-serif}
+:is(#mm57-root,#mm59-events-inline) *{box-sizing:border-box}
+:is(#mm57-root,#mm59-events-inline) h2{font-size:23px;margin:0 0 5px}:is(#mm57-root,#mm59-events-inline) h3{margin:0 0 13px;font-size:16px}:is(#mm57-root,#mm59-events-inline) p{margin:6px 0}
+:is(#mm57-root,#mm59-events-inline) .mm-muted{color:#9fb4cc;font-size:12px}:is(#mm57-root,#mm59-events-inline) .mm-section{background:#111f31;border:1px solid #29415d;border-radius:12px;padding:15px;margin:13px 0}
+:is(#mm57-root,#mm59-events-inline) .mm-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
+:is(#mm57-root,#mm59-events-inline) button,:is(#mm57-root,#mm59-events-inline) input,:is(#mm57-root,#mm59-events-inline) select,:is(#mm57-root,#mm59-events-inline) textarea{font:inherit;min-height:36px;max-width:100%;border-radius:8px;border:1px solid #385474;padding:7px 10px;color:#ecf4ff;background:#0c1a2b}
+:is(#mm57-root,#mm59-events-inline) button{cursor:pointer;background:#193955}:is(#mm57-root,#mm59-events-inline) button:hover{filter:brightness(1.17)}:is(#mm57-root,#mm59-events-inline) button.mm-primary{background:#2364a0;border-color:#3779b3}:is(#mm57-root,#mm59-events-inline) button.mm-danger{color:#ff9aa5}
+:is(#mm57-root,#mm59-events-inline) input[type=checkbox]{min-height:0;width:auto}:is(#mm57-root,#mm59-events-inline) input[type=search],:is(#mm57-root,#mm59-events-inline) input[type=text],:is(#mm57-root,#mm59-events-inline) input[type=datetime-local]{min-width:155px}
+:is(#mm57-root,#mm59-events-inline) textarea{width:100%;min-height:80px}:is(#mm57-root,#mm59-events-inline) label{display:flex;align-items:center;gap:6px;flex-wrap:wrap;color:#d7e8ff;font-size:12px}
+:is(#mm57-root,#mm59-events-inline) label.mm-stack{display:flex;flex-direction:column;align-items:flex-start;gap:5px}:is(#mm57-root,#mm59-events-inline) label.mm-stack input,:is(#mm57-root,#mm59-events-inline) label.mm-stack select{width:100%}
+:is(#mm57-root,#mm59-events-inline) .mm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:11px}
+:is(#mm57-root,#mm59-events-inline) .mm-stat{border:1px solid #28425e;border-radius:11px;padding:12px;background:#11263c}:is(#mm57-root,#mm59-events-inline) .mm-stat strong{display:block;font-size:23px;font-weight:800}
+:is(#mm57-root,#mm59-events-inline) table{width:100%;min-width:700px;border-collapse:collapse}:is(#mm57-root,#mm59-events-inline) th,:is(#mm57-root,#mm59-events-inline) td{padding:10px 8px;border-bottom:1px solid #2c4057;text-align:left;font-size:12px;vertical-align:middle}:is(#mm57-root,#mm59-events-inline) th{color:#9ab6d3}:is(#mm57-root,#mm59-events-inline) .mm-scroll{overflow:auto;max-width:100%}
+:is(#mm57-root,#mm59-events-inline) .mm-pill{display:inline-block;padding:3px 9px;border-radius:30px;background:#1b435e;color:#c5edff;font-size:11px}:is(#mm57-root,#mm59-events-inline) .mm-good{color:#91e4b8}:is(#mm57-root,#mm59-events-inline) .mm-warn{color:#ffcf86}:is(#mm57-root,#mm59-events-inline) .mm-bad{color:#ff9baa}
+:is(#mm57-root,#mm59-events-inline) .mm-card{padding:11px;background:#102239;border:1px solid #304b66;border-radius:10px;margin:8px 0}
+:is(#mm57-root,#mm59-events-inline) .mm-progress{height:8px;background:#253a54;border-radius:20px;overflow:hidden}:is(#mm57-root,#mm59-events-inline) .mm-progress>div{background:#4ba7db;height:100%}
+:is(#mm57-root,#mm59-events-inline) .mm-event-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}:is(#mm57-root,#mm59-events-inline) .mm-day{min-height:76px;padding:5px;border:1px solid #28415b;border-radius:7px;overflow:hidden}:is(#mm57-root,#mm59-events-inline) .mm-day strong{font-size:11px}:is(#mm57-root,#mm59-events-inline) .mm-event-chip{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#205276;border-radius:5px;font-size:10px;margin-top:4px;padding:2px 3px}
+:is(#mm57-root,#mm59-events-inline) .mm-banner{padding:10px 12px;border-radius:9px;background:#1d334a;border:1px solid #3d5c74;margin:10px 0}
+:is(#mm57-root,#mm59-events-inline) .mm-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:10px 0}
+:is(#mm57-root,#mm59-events-inline) .mm-actions{display:flex;gap:6px;flex-wrap:wrap}:is(#mm57-root,#mm59-events-inline) .mm-actions button{font-size:12px;padding:5px 8px}
+:is(#mm57-root,#mm59-events-inline) .mm-chartbar{display:flex;align-items:center;gap:10px;margin:9px 0}:is(#mm57-root,#mm59-events-inline) .mm-chartbar span{min-width:20px}:is(#mm57-root,#mm59-events-inline) .mm-chartbar i{display:block;background:#4f9eda;height:18px;border-radius:5px}
+:is(#mm57-root,#mm59-events-inline) :focus-visible{outline:2px solid #62c9ff;outline-offset:2px}
+@media(max-width:600px){:is(#mm57-root,#mm59-events-inline){padding:10px}:is(#mm57-root,#mm59-events-inline) .mm-event-grid{gap:2px}:is(#mm57-root,#mm59-events-inline) .mm-day{min-height:58px;padding:3px}:is(#mm57-root,#mm59-events-inline) .mm-event-chip{font-size:9px}:is(#mm57-root,#mm59-events-inline) .mm-toolbar>*{max-width:100%}}
 
 /* v59: ordered navigation / inline advanced search / event + notification merge */
 .mm59-utilities{border-top:1px solid var(--line);padding-top:10px;margin-top:8px;display:grid;gap:4px}
@@ -277,6 +277,30 @@ window.MM57IsDrop = function(c,db){
 #mm59-events-inline{margin-top:17px}
 #mm59-events-inline>h2{margin:0 0 5px;font-size:20px}
 #mm59-events-inline>.mm-muted{margin:0 0 14px}
+/* v59 calendar fix: styles originally scoped to #mm57-root now also cover the embedded event panel. */
+#mm59-events-inline{min-width:0;max-width:100%;overflow:hidden;margin-top:22px}
+#mm59-events-inline .mm-section{min-width:0;max-width:100%;overflow:hidden}
+#mm59-events-inline .mm-toolbar{display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:8px}
+#mm59-events-inline .mm-toolbar>b{font-variant-numeric:tabular-nums;white-space:nowrap;font-size:15px}
+#mm59-events-inline .mm-event-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;min-width:0;width:100%}
+#mm59-events-inline .mm-day{min-width:0;min-height:72px;padding:5px;border:1px solid #28415b;border-radius:7px;overflow:hidden;overflow-wrap:anywhere;background:#101d30}
+#mm59-events-inline .mm-event-grid>.mm-day:nth-child(-n+7){min-height:32px;padding:5px 2px;text-align:center;font-weight:700;background:#1c344f}
+#mm59-events-inline .mm-event-grid>.mm-day:nth-child(7n+1){border-color:#704b59}
+#mm59-events-inline .mm-event-grid>.mm-day:nth-child(7n){border-color:#425c83}
+#mm59-events-inline .mm-event-chip{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#mm59-events-inline .mm-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:10px}
+#mm59-events-inline .mm-fields>*{min-width:0}
+#mm59-events-inline .mm-card .mm-actions{margin-top:8px}
+@media(max-width:600px){
+ #mm59-events-inline{padding:10px}
+ #mm59-events-inline .mm-section{padding:10px}
+ #mm59-events-inline .mm-event-grid{gap:2px}
+ #mm59-events-inline .mm-day{min-height:57px;padding:3px 2px;border-radius:4px}
+ #mm59-events-inline .mm-event-grid>.mm-day:nth-child(-n+7){min-height:27px;padding:3px 0}
+ #mm59-events-inline .mm-event-chip{font-size:9px;padding:1px 2px}
+ #mm59-events-inline .mm-toolbar>*{max-width:100%}
+}
+
 @media(max-width:850px){#nav{grid-template-columns:repeat(3,minmax(0,1fr))}.mm59-utilities{grid-column:1/-1}}
 @media(max-width:560px){#nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
@@ -309,7 +333,7 @@ window.MM57IsDrop = function(c,db){
 <p class="muted" style="font-size:11px;margin:10px 0 0">初回移行前に「↓バックアップ」でJSONを保存してください。Googleログイン中は確認後に自動同期を開始します。</p>
 </section>
 
-<div class="footer">MONST MASTER v59 · データはこのブラウザ内にも保存されます。クラウド同期前にJSONバックアップを作成してください。</div></div><div id="modalRoot"></div><div id="toastRoot"></div>
+<div class="footer">MONST MASTER v59.1 · データはこのブラウザ内にも保存されます。クラウド同期前にJSONバックアップを作成してください。</div></div><div id="modalRoot"></div><div id="toastRoot"></div>
 
 <script>
 (function(){
