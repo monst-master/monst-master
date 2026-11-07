@@ -1,31 +1,24 @@
 {
   "schema": 3,
-  "generated_at": "2026-11-07T02:29:54.935824+00:00",
+  "generated_at": "2026-11-07T02:40:05.455414+00:00",
   "source": "https://game.technophere.com/monst/characters/",
   "monitor": {
-    "last_success": "2026-11-07T02:29:54.935824+00:00",
+    "last_success": "2026-11-07T02:40:05.455414+00:00",
     "pages_scanned": [
       1,
-      2,
-      3,
-      4,
-      5
+      6
     ],
     "pages_total": 50,
-    "new_characters_verified": 6,
+    "new_characters_verified": 0,
     "attributes_discovered": 0,
-    "profiles_verified": 6,
+    "profiles_verified": 0,
     "warnings": [
-      "profile 9535: 429 Client Error: Too Many Requests for url: https://game.technophere.com/monst/char/9534/",
-      "profile 9533: 429 Client Error: Too Many Requests for url: https://game.technophere.com/monst/char/9531/",
-      "profile 9530: 429 Client Error: Too Many Requests for url: https://game.technophere.com/monst/char/9529/",
-      "profile 9528: 429 Client Error: Too Many Requests for url: https://game.technophere.com/monst/char/9528/",
-      "profile 9526: 429 Client Error: Too Many Requests for url: https://game.technophere.com/monst/char/9526/",
-      "profile 9524: 429 Client Error: Too Many Requests for url: https://game.technophere.com/monst/char/9524/",
-      "profile 9523: 429 Client Error: Too Many Requests for url: https://game.technophere.com/monst/char/9523/",
-      "profile 9522: 429 Client Error: Too Many Requests for url: https://game.technophere.com/monst/char/9522/"
+      "profile 8701: 429 Client Error: Too Many Requests for url: https://game.technophere.com/monst/char/8700/",
+      "profile 8699: 429 Client Error: Too Many Requests for url: https://game.technophere.com/monst/char/8698/",
+      "profile 8697: 429 Client Error: Too Many Requests for url: https://game.technophere.com/monst/char/8696/",
+      "profile 8695: 429 Client Error: Too Many Requests for url: https://game.technophere.com/monst/char/8695/"
     ],
-    "next_page": 6,
+    "next_page": 7,
     "interval_note": "GitHub Actions schedule every 3 hours; may be delayed"
   },
   "characters": [
@@ -900,6 +893,13 @@
       "element": "光",
       "element_source": "listing-verified-attribute",
       "source_url": "https://game.technophere.com/monst/char/9290/#f9291"
+    },
+    {
+      "dexNo": 9286,
+      "name": "ホラー",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8661/#f9286"
     },
     {
       "dexNo": 9283,
@@ -2846,6 +2846,559 @@
       "element": "光",
       "element_source": "listing-verified-attribute",
       "source_url": "https://game.technophere.com/monst/char/8702/#f8703"
+    },
+    {
+      "dexNo": 8701,
+      "name": "斧乃木余接",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8700/#f8701"
+    },
+    {
+      "dexNo": 8699,
+      "name": "臥煙伊豆湖",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8698/#f8699"
+    },
+    {
+      "dexNo": 8697,
+      "name": "影縫余弦",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8696/#f8697"
+    },
+    {
+      "dexNo": 8695,
+      "name": "ファイヤーシスターズ",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8695/#f8695"
+    },
+    {
+      "dexNo": 8694,
+      "name": "戦場ヶ原ひたぎ",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8693/#f8694"
+    },
+    {
+      "dexNo": 8692,
+      "name": "忍野忍",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8691/#f8692"
+    },
+    {
+      "dexNo": 8690,
+      "name": "八九寺真宵",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8689/#f8690"
+    },
+    {
+      "dexNo": 8688,
+      "name": "羽川翼",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8687/#f8688"
+    },
+    {
+      "dexNo": 8686,
+      "name": "神原駿河",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8685/#f8686"
+    },
+    {
+      "dexNo": 8682,
+      "name": "エリス",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8680/#f8682"
+    },
+    {
+      "dexNo": 8679,
+      "name": "ドラギニャッツォ",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8679/#f8679"
+    },
+    {
+      "dexNo": 8676,
+      "name": "うーぱる",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8674/#f8676"
+    },
+    {
+      "dexNo": 8673,
+      "name": "カモノドン",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8672/#f8673"
+    },
+    {
+      "dexNo": 8671,
+      "name": "アストロオ",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8670/#f8671"
+    },
+    {
+      "dexNo": 8669,
+      "name": "リリネーヴェ",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8668/#f8669"
+    },
+    {
+      "dexNo": 8667,
+      "name": "バービッド",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8666/#f8667"
+    },
+    {
+      "dexNo": 8665,
+      "name": "ルルネーヴェ",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8664/#f8665"
+    },
+    {
+      "dexNo": 8663,
+      "name": "ムンドゥス",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8663/#f8663"
+    },
+    {
+      "dexNo": 8659,
+      "name": "ニケ",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8657/#f8659"
+    },
+    {
+      "dexNo": 8656,
+      "name": "クリソダルア",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8655/#f8656"
+    },
+    {
+      "dexNo": 8654,
+      "name": "ラヴェンツァ",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8654/#f8654"
+    },
+    {
+      "dexNo": 8653,
+      "name": "ヴァイオレット",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8652/#f8653"
+    },
+    {
+      "dexNo": 8648,
+      "name": "ジュスティーヌ＆カロリーヌ",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8648/#f8648"
+    },
+    {
+      "dexNo": 8647,
+      "name": "ノワール",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8646/#f8647"
+    },
+    {
+      "dexNo": 8645,
+      "name": "モルガナ",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8645/#f8645"
+    },
+    {
+      "dexNo": 8644,
+      "name": "カネシロ",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8644/#f8644"
+    },
+    {
+      "dexNo": 8643,
+      "name": "オクムラ",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8643/#f8643"
+    },
+    {
+      "dexNo": 8642,
+      "name": "ニイジマ",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8642/#f8642"
+    },
+    {
+      "dexNo": 8641,
+      "name": "マダラメ",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8641/#f8641"
+    },
+    {
+      "dexNo": 8640,
+      "name": "カモシダ",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8640/#f8640"
+    },
+    {
+      "dexNo": 8639,
+      "name": "クロウ",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8639/#f8639"
+    },
+    {
+      "dexNo": 8638,
+      "name": "ジョーカー",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8637/#f8638"
+    },
+    {
+      "dexNo": 8636,
+      "name": "クイーン",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8635/#f8636"
+    },
+    {
+      "dexNo": 8634,
+      "name": "スカル",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8633/#f8634"
+    },
+    {
+      "dexNo": 8632,
+      "name": "フォックス",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8631/#f8632"
+    },
+    {
+      "dexNo": 8630,
+      "name": "パンサー",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8629/#f8630"
+    },
+    {
+      "dexNo": 8628,
+      "name": "アンコルウ",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8627/#f8628"
+    },
+    {
+      "dexNo": 8624,
+      "name": "ボンデラックス",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8623/#f8624"
+    },
+    {
+      "dexNo": 8621,
+      "name": "花丸寿利",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8620/#f8621"
+    },
+    {
+      "dexNo": 8619,
+      "name": "ショカモリ",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8617/#f8619"
+    },
+    {
+      "dexNo": 8616,
+      "name": "涼里",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8615/#f8616"
+    },
+    {
+      "dexNo": 8614,
+      "name": "ラクリィα",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8613/#f8614"
+    },
+    {
+      "dexNo": 8612,
+      "name": "マムルα",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8611/#f8612"
+    },
+    {
+      "dexNo": 8610,
+      "name": "Two for all α",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8609/#f8610"
+    },
+    {
+      "dexNo": 8608,
+      "name": "アムネディア",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8608/#f8608"
+    },
+    {
+      "dexNo": 8607,
+      "name": "パラノヴィア",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8607/#f8607"
+    },
+    {
+      "dexNo": 8604,
+      "name": "シュウジ",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8604/#f8604"
+    },
+    {
+      "dexNo": 8603,
+      "name": "コモリ",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8603/#f8603"
+    },
+    {
+      "dexNo": 8601,
+      "name": "ドゥームラサメ",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8601/#f8601"
+    },
+    {
+      "dexNo": 8600,
+      "name": "マチュ＆シュウジ",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8600/#f8600"
+    },
+    {
+      "dexNo": 8599,
+      "name": "ガイア＆オルテガ",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8599/#f8599"
+    },
+    {
+      "dexNo": 8598,
+      "name": "シイコ",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8598/#f8598"
+    },
+    {
+      "dexNo": 8597,
+      "name": "アラガ＆ラゴウチ",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8597/#f8597"
+    },
+    {
+      "dexNo": 8596,
+      "name": "ゲーツキャパ",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8596/#f8596"
+    },
+    {
+      "dexNo": 8595,
+      "name": "ザク",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8595/#f8595"
+    },
+    {
+      "dexNo": 8594,
+      "name": "シャア",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8594/#f8594"
+    },
+    {
+      "dexNo": 8593,
+      "name": "ニャアン",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8592/#f8593"
+    },
+    {
+      "dexNo": 8591,
+      "name": "エグザベ",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8590/#f8591"
+    },
+    {
+      "dexNo": 8589,
+      "name": "シャリアブル",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8588/#f8589"
+    },
+    {
+      "dexNo": 8587,
+      "name": "マチュ",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8586/#f8587"
+    },
+    {
+      "dexNo": 8585,
+      "name": "シュウジ",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8584/#f8585"
+    },
+    {
+      "dexNo": 8572,
+      "name": "ネオ(MV)",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8572/#f8572"
+    },
+    {
+      "dexNo": 8565,
+      "name": "ヤバい女子高生たち",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8564/#f8565"
+    },
+    {
+      "dexNo": 8563,
+      "name": "ゆふる",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8562/#f8563"
+    },
+    {
+      "dexNo": 8555,
+      "name": "プロポバテ",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8554/#f8555"
+    },
+    {
+      "dexNo": 8552,
+      "name": "いろは",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8550/#f8552"
+    },
+    {
+      "dexNo": 8549,
+      "name": "ロベスピエール",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8549/#f8549"
+    },
+    {
+      "dexNo": 8548,
+      "name": "ツェーン",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8547/#f8548"
+    },
+    {
+      "dexNo": 8544,
+      "name": "アーモンナイト",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8543/#f8544"
+    },
+    {
+      "dexNo": 8542,
+      "name": "ドドチ",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8541/#f8542"
+    },
+    {
+      "dexNo": 8540,
+      "name": "マンモニアス",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8538/#f8540"
+    },
+    {
+      "dexNo": 8537,
+      "name": "ナイトホーク",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8536/#f8537"
+    },
+    {
+      "dexNo": 8535,
+      "name": "チハ",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8534/#f8535"
+    },
+    {
+      "dexNo": 8533,
+      "name": "アイオワ",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8532/#f8533"
+    },
+    {
+      "dexNo": 8531,
+      "name": "メビウス",
+      "element": "火",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8529/#f8531"
+    },
+    {
+      "dexNo": 8528,
+      "name": "リズム",
+      "element": "闇",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8528/#f8528"
+    },
+    {
+      "dexNo": 8527,
+      "name": "レース",
+      "element": "光",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8526/#f8527"
+    },
+    {
+      "dexNo": 8525,
+      "name": "シェオル",
+      "element": "水",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8525/#f8525"
+    },
+    {
+      "dexNo": 8521,
+      "name": "猫猫＆壬氏",
+      "element": "木",
+      "element_source": "listing-verified-attribute",
+      "source_url": "https://game.technophere.com/monst/char/8521/#f8521"
     }
   ],
   "ex_categories": {}
